@@ -1,0 +1,170 @@
+/* ==========================================================================
+   RESET & FOUNDATIONS
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: #f1f5f9; /* Soft cool-neutral background for figure-ground */
+  color: #1e293b;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   CONTAINER & SIGHTLINE CONTROLS
+   ========================================================================== */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* ==========================================================================
+   HEADER & METADATA BAR (Fixes Assignment 1 feedback)
+   ========================================================================== */
+.header-hero {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 6px solid #0d9488; /* Deep teal anchor */
+  border-radius: 8px;
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.header-hero h1 {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: -0.02em;
+}
+
+.header-hero .lead-text {
+  font-size: 1.15rem;
+  color: #475569;
+  max-width: 60ch; /* ~8-10 words per line */
+  margin-bottom: 1.5rem;
+}
+
+.metadata-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.metadata-grid strong {
+  color: #0f172a;
+}
+
+/* ==========================================================================
+   SECTION CONTAINERS & HEADINGS
+   ========================================================================== */
+.section-block {
+  margin-bottom: 3.5rem;
+}
+
+.section-header {
+  margin-bottom: 1.75rem;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.75rem;
+}
+
+.section-number {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: #0d9488;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.section-header h2 {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1.85rem;
+  color: #0f172a;
+  margin: 0;
+}
+
+/* ==========================================================================
+   GRID CARDS & FIGURE-GROUND CONTRAST
+   ========================================================================== */
+.card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 1.5rem);
+}
+
+.card-title {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1.3rem;
+  color: #0f172a;
+  margin: 0 0 0.5rem 0;
+}
+
+.chart-wrapper {
+  width: 100%;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY RULES (Assignment 1 constraint: max 10 words per line)
+   ========================================================================== */
+.narrative-prose {
+  font-size: 1.05rem;
+  color: #334155;
+  line-height: 1.65;
+  max-width: 58ch; /* Enforces strict ~9-10 words per line maximum */
+  margin: 0.5rem 0 0 0;
+}
+
+.lead-insight {
+  font-weight: 700;
+  color: #0f172a;
+  display: inline;
+}
+
+/* ==========================================================================
+   FOOTER (Assignment 1 metadata requirement)
+   ========================================================================== */
+footer {
+  margin-top: 4rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid #cbd5e1;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+footer p {
+  max-width: 60ch;
+  margin: 0.35rem 0;
+}

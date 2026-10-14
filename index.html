@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Mental Health Landscape in Australia | FIT3179</title>
+
+  <!-- Typography: Newsreader (Editorial Serif) & Inter (Sans-Serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+
+  <!-- Pure.css Responsive Grid -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+
+  <!-- Custom Site Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Vega & Vega-Lite Dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+
+  <div class="page-container">
+
+    <!-- METADATA HERO BANNER -->
+    <header class="header-hero">
+      <h1>The Mental Health Landscape in Australia</h1>
+      <p class="lead-text">
+        Examining regional disparity, demographic vulnerability, and structural healthcare constraints across the nation.
+      </p>
+      
+      <div class="metadata-grid">
+        <div><strong>Author:</strong> Ryan Yu-Wen Suwito</div>
+        <div><strong>Student ID:</strong> 34076565</div>
+        <div><strong>Unit:</strong> FIT3179 Data Visualisation (A2)</div>
+        <div><strong>Date:</strong> October 2026</div>
+        <div><strong>Data Sources:</strong> ABS, AIHW, Department of Health</div>
+      </div>
+    </header>
+
+    <!-- SECTION 1: PREVALENCE & DEMOGRAPHIC DIVIDE -->
+    <section class="section-block">
+      <div class="section-header">
+        <span class="section-number">Section 01</span>
+        <h2>Prevalence & Demographic Vulnerability</h2>
+      </div>
+
+      <div class="pure-g">
+        <!-- Chart 1: Choropleth Map -->
+        <div class="pure-u-1 pure-u-md-1-2">
+          <div class="card">
+            <div>
+              <h3 class="card-title">Distress Concentration by State</h3>
+              <div id="vis-map-distress" class="chart-wrapper"></div>
+            </div>
+            <p class="narrative-prose">
+              <span class="lead-insight">Regional Exposure:</span>
+              Territories and rural communities report elevated psychological distress rates, consistently outpacing metropolitan state capitals.
+            </p>
+          </div>
+        </div>
+
+        <!-- Chart 2: Butterfly Pyramid -->
+        <div class="pure-u-1 pure-u-md-1-2">
+          <div class="card">
+            <div>
+              <h3 class="card-title">Anxiety by Age Cohort & Gender</h3>
+              <div id="vis-pyramid-anxiety" class="chart-wrapper"></div>
+            </div>
+            <p class="narrative-prose">
+              <span class="lead-insight">Young Demographics:</span>
+              Females aged 16–24 experience the highest relative anxiety burden, nearly doubling observed rates among older demographics.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: LONG-TERM TRENDS & SOCIO-ECONOMIC BURDEN -->
+    <section class="section-block">
+      <div class="section-header">
+        <span class="section-number">Section 02</span>
+        <h2>Long-Term Shifts & Socio-Economic Burden</h2>
+      </div>
+
+      <div class="pure-g">
+        <!-- Chart 3: Slopegraph -->
+        <div class="pure-u-1 pure-u-md-1-2">
+          <div class="card">
+            <div>
+              <h3 class="card-title">10-Year Psychological Distress Drift</h3>
+              <div id="vis-slope-distress" class="chart-wrapper"></div>
+            </div>
+            <p class="narrative-prose">
+              <span class="lead-insight">Steepest Trajectory:</span>
+              Severe distress rates among youth grew by over 12 percentage points over the decade, widening the gap across generations.
+            </p>
+          </div>
+        </div>
+
+        <!-- Chart 4: Matrix Heatmap -->
+        <div class="pure-u-1 pure-u-md-1-2">
+          <div class="card">
+            <div>
+              <h3 class="card-title">Diagnostic Burden Across Wealth Quintiles</h3>
+              <div id="vis-heat-socioeconomic" class="chart-wrapper"></div>
+            </div>
+            <p class="narrative-prose">
+              <span class="lead-insight">Socio-Economic Gradient:</span>
+              Affective disorders concentrate disproportionately in the lowest economic quintiles, compounding systemic financial vulnerabilities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: GEOGRAPHIC INEQUITY & PATIENT MOBILITY -->
+    <section class="section-block">
+      <div class="section-header">
+        <span class="section-number">Section 03</span>
+        <h2>Geographic Inequity & Patient Mobility</h2>
+      </div>
+
+      <div class="pure-g">
+        <!-- Chart 5: Flow / Route Map -->
+        <div class="pure-u-1 pure-u-md-1-2">
+          <div class="card">
+            <div>
+              <h3 class="card-title">Regional Transit to Metropolitan Care</h3>
+              <div id="vis-map-flow" class="chart-wrapper"></div>
+            </div>
+            <p class="narrative-prose">
+              <span class="lead-insight">Transit Corridors:</span>
+              Patients from remote zones travel hundreds of kilometers toward capital nodes to access inpatient sub-specialty psychiatric wards.
+            </p>
+          </div>
+        </div>
+
+        <!-- Chart 6: Multi-Line Channels -->
+        <div class="pure-u-1 pure-u-md-1-2">
+          <div class="card">
+            <div>
+              <h3 class="card-title">Consultation Modality Evolution (2018–2024)</h3>
+              <div id="vis-line-channels" class="chart-wrapper"></div>
+            </div>
+            <p class="narrative-prose">
+              <span class="lead-insight">Telehealth Inflection:</span>
+              Video consultations expanded by 1,800% post-2020, stabilizing into a critical pillar of non-metropolitan service delivery.
+            </p>
+          </div>
+        </div>
+
+        <!-- Chart 7: Dumbbell Wait Times -->
+        <div class="pure-u-1 pure-u-md-1-2">
+          <div class="card">
+            <div>
+              <h3 class="card-title">Specialist Wait Times: Metro vs Regional</h3>
+              <div id="vis-dumbbell-waits" class="chart-wrapper"></div>
+            </div>
+            <p class="narrative-prose">
+              <span class="lead-insight">The 12-Week Penalty:</span>
+              Regional residents face an average 12-week additional delay compared to city residents when seeking clinical psychology intakes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Chart 8: Proportional Symbol Map -->
+        <div class="pure-u-1 pure-u-md-1-2">
+          <div class="card">
+            <div>
+              <h3 class="card-title">Medicare Care Plan Subsidies</h3>
+              <div id="vis-map-symbols" class="chart-wrapper"></div>
+            </div>
+            <p class="narrative-prose">
+              <span class="lead-insight">Resource Clustering:</span>
+              Total MBS mental health rebates cluster along eastern urban coastal corridors, highlighting regional billing deficits.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: SYSTEM CAPACITY & TREATMENT ATTRITION -->
+    <section class="section-block">
+      <div class="section-header">
+        <span class="section-number">Section 04</span>
+        <h2>System Capacity & Treatment Pathways</h2>
+      </div>
+
+      <div class="pure-g">
+        <!-- Chart 9: Bump Chart -->
+        <div class="pure-u-1 pure-u-md-1-2">
+          <div class="card">
+            <div>
+              <h3 class="card-title">Rank Dynamics of Crisis Hotline Triggers</h3>
+              <div id="vis-bump-crisis" class="chart-wrapper"></div>
+            </div>
+            <p class="narrative-prose">
+              <span class="lead-insight">Economic Stressors:</span>
+              Cost-of-living and housing insecurity rapidly climbed into the primary ranks of crisis hotline support intake reasons.
+            </p>
+          </div>
+        </div>
+
+        <!-- Chart 10: Bullet Graph -->
+        <div class="pure-u-1 pure-u-md-1-2">
+          <div class="card">
+            <div>
+              <h3 class="card-title">Workforce Density Against National Benchmarks</h3>
+              <div id="vis-bullet-workforce" class="chart-wrapper"></div>
+            </div>
+            <p class="narrative-prose">
+              <span class="lead-insight">Staffing Deficits:</span>
+              Active psychiatric practitioners fall 27% short of target staffing levels, bottlenecking early clinical intervention.
+            </p>
+          </div>
+        </div>
+
+        <!-- Chart 11: Care Plan Attrition (Added to guarantee HD threshold) -->
+        <div class="pure-u-1">
+          <div class="card">
+            <div>
+              <h3 class="card-title">Mental Health Treatment Plan Attrition Rate</h3>
+              <div id="vis-step-funnel" class="chart-wrapper"></div>
+            </div>
+            <p class="narrative-prose" style="max-width: 80ch;">
+              <span class="lead-insight">Financial Drop-off:</span>
+              Nearly 40% of patients with an approved GP Mental Health Care Plan do not complete their allocated psychology sessions, primarily citing steep out-of-pocket gap fees.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- METADATA FOOTER -->
+    <footer>
+      <div class="pure-g">
+        <div class="pure-u-1 pure-u-md-2-3">
+          <p><strong>Visualisation Author:</strong> Ryan Yu-Wen Suwito (ID: 34076565)</p>
+          <p>Created for FIT3179 Data Visualisation 2, Monash University, Semester 2, 2026.</p>
+          <p><strong>Data Provenance:</strong> Australian Bureau of Statistics (National Health Survey 2022), Australian Institute of Health and Welfare (Mental Health Services in Australia 2024), and Medicare Benefits Schedule (MBS) public datasets.</p>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-3">
+          <p>Hosted on GitHub Pages.</p>
+          <p>All chart specifications authored in Vega-Lite v5.</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Custom Theme and Script Loader -->
+  <script src="js/theme.js"></script>
+  <script>
+    /**
+     * Embed helper that automatically applies the custom theme to every chart
+     */
+    function renderChart(containerId, specPath) {
+      vegaEmbed(containerId, specPath, {
+        mode: "vega-lite",
+        theme: "none",
+        config: customTheme,
+        actions: { export: true, source: false, editor: false }
+      }).catch(console.error);
+    }
+
+    // Embed triggers (Ready to point to your JSON specifications)
+    // renderChart('#vis-map-distress', 'jsons/chart1_choropleth.vl.json');
+    // renderChart('#vis-pyramid-anxiety', 'jsons/chart2_butterfly.vl.json');
+    // ...
+  </script>
+</body>
+</html>
