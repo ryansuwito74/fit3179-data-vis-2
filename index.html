@@ -106,12 +106,12 @@
         <div class="pure-u-1 pure-u-md-1-2">
           <div class="card">
             <div>
-              <h3 class="card-title">Diagnostic Burden Across Wealth Quintiles</h3>
+              <h3 class="card-title">Psychological Distress Severity Across Age Cohorts</h3>
               <div id="vis-heat-socioeconomic" class="chart-wrapper"></div>
             </div>
             <p class="narrative-prose">
-              <span class="lead-insight">Socio-Economic Gradient:</span>
-              Affective disorders concentrate disproportionately in the lowest economic quintiles, compounding systemic financial vulnerabilities.
+              <span class="lead-insight">Severe Distress Concentration:</span>
+              Over 25% of young Australians aged 16–24 experience high or very high psychological distress, more than 2.5 times the rate observed in older cohorts.
             </p>
           </div>
         </div>
@@ -272,6 +272,7 @@
     renderChart('#vis-map-distress', 'jsons/chart1_choropleth.vl.json');
     renderChart('#vis-pyramid-anxiety', 'jsons/chart2_butterfly.vl.json');
     renderChart('#vis-slope-distress', 'jsons/chart3_slopegraph.vl.json');
+    renderChart('#vis-heat-socioeconomic', 'jsons/chart4_heatmap.vl.json');
     // ...
   </script>
 </body>
