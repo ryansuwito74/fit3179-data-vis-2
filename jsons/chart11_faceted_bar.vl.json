@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container",
   "data": {
     "url": "data/chart11_treemap_diagnoses.csv"
   },
@@ -9,18 +8,31 @@
       "field": "disorder_group",
       "type": "nominal",
       "header": {
-        "title": "Broad Disorder Group",
-        "labelFontWeight": "bold"
+        "title": null,
+        "labelFontWeight": "bold",
+        "labelFontSize": 12,
+        "labelPadding": 6
       }
     }
   },
   "spec": {
+    "width": 320,
     "height": {
-      "step": 25
+      "step": 23
     },
+    "params": [
+      {
+        "name": "bar_hover",
+        "select": {
+          "type": "point",
+          "on": "pointerover",
+          "clear": "pointerout"
+        }
+      }
+    ],
     "mark": {
       "type": "bar",
-      "cornerRadiusEnd": 2
+      "cornerRadiusEnd": 3
     },
     "encoding": {
       "y": {
@@ -28,41 +40,80 @@
         "type": "nominal",
         "sort": "-x",
         "axis": {
-          "title": null
+          "title": null,
+          "labelFontSize": 11
         }
       },
       "x": {
         "field": "persons_k",
         "type": "quantitative",
         "axis": {
-          "title": "Affected Population ('000)"
+          "title": "Affected Persons ('000)",
+          "labelFontSize": 10
         }
       },
       "color": {
         "field": "disorder_group",
         "type": "nominal",
+        "scale": {
+          "domain": [
+            "Anxiety Disorders",
+            "Affective Disorders",
+            "Substance Use Disorders"
+          ],
+          "range": [
+            "#6366f1",
+            "#f43f5e",
+            "#0ea5e9"
+          ]
+        },
         "legend": null
       },
+      "opacity": {
+        "condition": {
+          "param": "bar_hover",
+          "empty": false,
+          "value": 1
+        },
+        "value": 0.85
+      },
       "tooltip": [
+        {
+          "field": "disorder_group",
+          "title": "Broad Category"
+        },
         {
           "field": "specific_diagnosis",
           "title": "Diagnosis"
         },
         {
           "field": "persons_k",
-          "title": "Persons ('000)",
+          "title": "Affected Persons ('000)",
           "format": ",.1f"
         },
         {
           "field": "proportion_pct",
-          "title": "Prevalence (%)",
+          "title": "National Prevalence (%)",
           "format": ".1f"
+        },
+        {
+          "field": "females_k",
+          "title": "Females ('000)",
+          "format": ",.1f"
+        },
+        {
+          "field": "males_k",
+          "title": "Males ('000)",
+          "format": ",.1f"
         }
       ]
     }
   },
   "resolve": {
     "scale": {
+      "y": "independent"
+    },
+    "axis": {
       "y": "independent"
     }
   }
