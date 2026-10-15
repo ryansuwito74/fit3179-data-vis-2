@@ -1,17 +1,39 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 280,
+  "height": 320,
   "data": {
-    "url": "data/chart12_benchmark_bullet.csv"
+    "url": "data/chart12_bullet_state_benchmarks.csv"
   },
+  "transform": [
+    {
+      "calculate": "datum.Current_Prevalence_Pct >= datum.National_Benchmark_Pct ? 'Above Benchmark' : 'Below Benchmark'",
+      "as": "Benchmark_Status"
+    },
+    {
+      "calculate": "round((datum.Current_Prevalence_Pct - datum.National_Benchmark_Pct) * 10) / 10",
+      "as": "Benchmark_Diff"
+    }
+  ],
   "encoding": {
     "y": {
       "field": "State",
       "type": "nominal",
-      "sort": "-x",
+      "scale": {
+        "domain": [
+          "Northern Territory",
+          "Australian Capital Territory",
+          "Queensland",
+          "Western Australia",
+          "South Australia",
+          "Victoria",
+          "Tasmania",
+          "New South Wales"
+        ]
+      },
       "axis": {
-        "title": null
+        "title": null,
+        "labelFontSize": 11
       }
     }
   },
@@ -28,11 +50,12 @@
           "scale": {
             "domain": [
               0,
-              35
+              32
             ]
           },
           "axis": {
-            "title": "Prevalence (%)"
+            "title": "12-Month Mental Disorder Prevalence (%)",
+            "labelFontSize": 10
           }
         }
       }
@@ -62,15 +85,33 @@
       }
     },
     {
+      "params": [
+        {
+          "name": "state_hover",
+          "select": {
+            "type": "point",
+            "on": "pointerover",
+            "clear": "pointerout"
+          }
+        }
+      ],
       "mark": {
         "type": "bar",
-        "size": 10,
-        "color": "#0f172a"
+        "size": 14,
+        "cornerRadiusEnd": 2
       },
       "encoding": {
         "x": {
           "field": "Current_Prevalence_Pct",
           "type": "quantitative"
+        },
+        "color": {
+          "condition": {
+            "param": "state_hover",
+            "empty": false,
+            "value": "#4f46e5"
+          },
+          "value": "#1e293b"
         },
         "tooltip": [
           {
@@ -81,16 +122,51 @@
             "field": "Current_Prevalence_Pct",
             "title": "State Prevalence (%)",
             "format": ".1f"
+          },
+          {
+            "field": "National_Benchmark_Pct",
+            "title": "National Benchmark (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "Benchmark_Diff",
+            "title": "Variance (pp)",
+            "format": "+.1f"
+          },
+          {
+            "field": "Benchmark_Status",
+            "title": "Benchmark Status"
           }
         ]
       }
     },
     {
       "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "fontSize": 10.5,
+        "fontWeight": 600,
+        "fill": "#1e293b"
+      },
+      "encoding": {
+        "x": {
+          "field": "Current_Prevalence_Pct",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "Current_Prevalence_Pct",
+          "type": "quantitative",
+          "format": ".1f"
+        }
+      }
+    },
+    {
+      "mark": {
         "type": "tick",
         "color": "#e11d48",
-        "thickness": 3,
-        "size": 20
+        "thickness": 3.5,
+        "size": 24
       },
       "encoding": {
         "x": {
@@ -100,9 +176,42 @@
         "tooltip": [
           {
             "field": "National_Benchmark_Pct",
-            "title": "National Benchmark (%)"
+            "title": "National Target Benchmark (%)",
+            "format": ".1f"
           }
         ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "State": "Northern Territory",
+            "x_val": 21.5,
+            "label": "National Benchmark: 21.5%"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "dy": -18,
+        "fontSize": 10.5,
+        "fontWeight": 600,
+        "fill": "#be123c"
+      },
+      "encoding": {
+        "x": {
+          "field": "x_val",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "State",
+          "type": "nominal"
+        },
+        "text": {
+          "field": "label"
+        }
       }
     }
   ]
