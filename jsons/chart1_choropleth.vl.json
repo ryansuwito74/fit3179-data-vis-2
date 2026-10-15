@@ -1,15 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Northern Territory and ACT Record Highest 12-Month Disorder Rates",
-    "subtitle": "Proportion of persons aged 16–85 with an active 12-month mental disorder by state/territory (%), 2020–2022",
-    "anchor": "start"
-  },
   "width": "container",
-  "height": 400,
+  "height": 360,
   "data": {
     "url": "data/maps/au-states-topo.json",
-    "format": { "type": "topojson", "feature": "austates" }
+    "format": {
+      "type": "topojson",
+      "feature": "austates"
+    }
   },
   "transform": [
     {
@@ -18,24 +16,50 @@
     {
       "lookup": "properties.STATE_NAME",
       "from": {
-        "data": { "url": "data/chart1_state_prevalence.csv" },
+        "data": {
+          "url": "data/chart1_state_prevalence.csv"
+        },
         "key": "State",
-        "fields": ["Any_12m_Disorder_Pct", "Abbrev"]
+        "fields": [
+          "Any_12m_Disorder_Pct",
+          "Abbrev"
+        ]
       }
     }
   ],
-  "projection": { "type": "equirectangular" },
-  "mark": { "type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1 },
+  "projection": {
+    "type": "equirectangular"
+  },
+  "mark": {
+    "type": "geoshape",
+    "stroke": "#ffffff",
+    "strokeWidth": 1
+  },
   "encoding": {
     "color": {
       "field": "Any_12m_Disorder_Pct",
       "type": "quantitative",
-      "scale": { "scheme": "teals" },
-      "legend": { "title": "Disorder Rate (%)", "orient": "right" }
+      "scale": {
+        "scheme": "teals"
+      },
+      "legend": {
+        "title": "Disorder Rate (%)",
+        "orient": "bottom",
+        "direction": "horizontal"
+      }
     },
     "tooltip": [
-      { "field": "properties.STATE_NAME", "type": "nominal", "title": "State" },
-      { "field": "Any_12m_Disorder_Pct", "type": "quantitative", "title": "Prevalence (%)", "format": ".1f" }
+      {
+        "field": "properties.STATE_NAME",
+        "type": "nominal",
+        "title": "State"
+      },
+      {
+        "field": "Any_12m_Disorder_Pct",
+        "type": "quantitative",
+        "title": "Prevalence (%)",
+        "format": ".1f"
+      }
     ]
   }
 }

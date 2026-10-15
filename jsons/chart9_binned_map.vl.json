@@ -1,43 +1,85 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Regional Coastal Corridors Report Higher Prevalence Rates Than Capital City Cores",
-    "subtitle": "Spatial binning of Statistical Area Level 4 (SA4) diagnosed mental health patient counts and rates, 2021 Census",
-    "anchor": "start"
-  },
   "width": "container",
   "height": 450,
   "layer": [
     {
       "data": {
         "url": "data/maps/au-states-topo.json",
-        "format": { "type": "topojson", "feature": "austates" }
+        "format": {
+          "type": "topojson",
+          "feature": "austates"
+        }
       },
-      "transform": [{ "filter": "datum.id != 8" }],
-      "mark": { "type": "geoshape", "fill": "#f8fafc", "stroke": "#cbd5e1" }
+      "transform": [
+        {
+          "filter": "datum.id != 8"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f8fafc",
+        "stroke": "#cbd5e1"
+      }
     },
     {
-      "data": { "url": "data/chart9_sa4_binned_map.csv" },
-      "mark": { "type": "circle", "opacity": 0.8 },
+      "data": {
+        "url": "data/chart9_sa4_binned_map.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "opacity": 0.8
+      },
       "encoding": {
-        "longitude": { "field": "lon", "type": "quantitative" },
-        "latitude": { "field": "lat", "type": "quantitative" },
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
         "size": {
           "field": "patients_count",
           "type": "quantitative",
-          "scale": { "range": [30, 600] },
-          "legend": { "title": "Total Patients" }
+          "scale": {
+            "range": [
+              30,
+              600
+            ]
+          },
+          "legend": {
+            "title": "Total Patients"
+          }
         },
         "color": {
           "field": "prevalence_pct",
           "type": "quantitative",
-          "scale": { "scheme": "purples" },
-          "legend": { "title": "Prevalence (%)" }
+          "scale": {
+            "scheme": "purples"
+          },
+          "legend": {
+            "title": "Prevalence (%)"
+          }
         },
         "tooltip": [
-          { "field": "SA4_Name", "type": "nominal", "title": "SA4 Region" },
-          { "field": "patients_count", "type": "quantitative", "title": "Patients", "format": ",.0f" },
-          { "field": "prevalence_pct", "type": "quantitative", "title": "Prevalence (%)", "format": ".2f" }
+          {
+            "field": "SA4_Name",
+            "type": "nominal",
+            "title": "SA4 Region"
+          },
+          {
+            "field": "patients_count",
+            "type": "quantitative",
+            "title": "Patients",
+            "format": ",.0f"
+          },
+          {
+            "field": "prevalence_pct",
+            "type": "quantitative",
+            "title": "Prevalence (%)",
+            "format": ".2f"
+          }
         ]
       }
     }

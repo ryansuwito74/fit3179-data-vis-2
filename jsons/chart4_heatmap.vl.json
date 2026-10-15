@@ -1,25 +1,40 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Over 1 in 4 Young Australians Experience High or Very High Psychological Distress",
-    "subtitle": "Share of age group across Kessler Psychological Distress Scale (K10) severity categories (%), 2020–2022",
-    "anchor": "start"
-  },
   "width": "container",
-  "height": 280,
-  "data": { "url": "data/chart4_age_distress.csv" },
+  "height": 340,
+  "data": {
+    "url": "data/chart4_age_distress.csv"
+  },
   "encoding": {
     "x": {
       "field": "age_group",
       "type": "ordinal",
-      "sort": ["16–24", "25–34", "35–44", "45–54", "55–64", "65–74", "75–85"],
-      "axis": { "title": "Age Cohort", "labelAngle": 0 }
+      "sort": [
+        "16–24",
+        "25–34",
+        "35–44",
+        "45–54",
+        "55–64",
+        "65–74",
+        "75–85"
+      ],
+      "axis": {
+        "title": "Age Cohort",
+        "labelAngle": 0
+      }
     },
     "y": {
       "field": "distress_level",
       "type": "ordinal",
-      "sort": ["Very High", "High", "Moderate", "Low"],
-      "axis": { "title": "Distress Level (K10)" }
+      "sort": [
+        "Very High",
+        "High",
+        "Moderate",
+        "Low"
+      ],
+      "axis": {
+        "title": "Distress Level (K10)"
+      }
     }
   },
   "layer": [
@@ -27,39 +42,87 @@
       "params": [
         {
           "name": "cell_hover",
-          "select": { "type": "point", "on": "pointerover", "clear": "pointerout" }
+          "select": {
+            "type": "point",
+            "on": "pointerover",
+            "clear": "pointerout"
+          }
         }
       ],
-      "mark": { "type": "rect" },
+      "mark": {
+        "type": "rect"
+      },
       "encoding": {
         "color": {
           "field": "percentage",
           "type": "quantitative",
-          "scale": { "scheme": "tealblues" },
-          "legend": { "title": "Share of Cohort (%)" }
+          "scale": {
+            "scheme": "tealblues"
+          },
+          "legend": {
+            "title": "Share of Cohort (%)"
+          }
         },
         "stroke": {
-          "condition": { "param": "cell_hover", "empty": false, "value": "#0f172a" },
+          "condition": {
+            "param": "cell_hover",
+            "empty": false,
+            "value": "#0f172a"
+          },
           "value": "#ffffff"
         },
         "strokeWidth": {
-          "condition": { "param": "cell_hover", "empty": false, "value": 3 },
+          "condition": {
+            "param": "cell_hover",
+            "empty": false,
+            "value": 3
+          },
           "value": 2
         },
         "tooltip": [
-          { "field": "age_group", "type": "nominal", "title": "Age Cohort" },
-          { "field": "distress_level", "type": "nominal", "title": "K10 Distress Level" },
-          { "field": "percentage", "type": "quantitative", "title": "Cohort Share (%)", "format": ".1f" },
-          { "field": "count_k", "type": "quantitative", "title": "Est. Population ('000)", "format": ",.1f" }
+          {
+            "field": "age_group",
+            "type": "nominal",
+            "title": "Age Cohort"
+          },
+          {
+            "field": "distress_level",
+            "type": "nominal",
+            "title": "K10 Distress Level"
+          },
+          {
+            "field": "percentage",
+            "type": "quantitative",
+            "title": "Cohort Share (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "count_k",
+            "type": "quantitative",
+            "title": "Est. Population ('000)",
+            "format": ",.1f"
+          }
         ]
       }
     },
     {
-      "mark": { "type": "text", "baseline": "middle", "fontSize": 11, "fontWeight": 600 },
+      "mark": {
+        "type": "text",
+        "baseline": "middle",
+        "fontSize": 11,
+        "fontWeight": 600
+      },
       "encoding": {
-        "text": { "field": "percentage", "type": "quantitative", "format": ".1f" },
+        "text": {
+          "field": "percentage",
+          "type": "quantitative",
+          "format": ".1f"
+        },
         "color": {
-          "condition": { "test": "datum.percentage > 40", "value": "#ffffff" },
+          "condition": {
+            "test": "datum.percentage > 40",
+            "value": "#ffffff"
+          },
           "value": "#0f172a"
         }
       }

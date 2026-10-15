@@ -127,13 +127,34 @@ body {
 
 .chart-wrapper {
   width: 100%;
-  min-height: 340px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  background-color: #fafafa;
-  border-radius: 4px;
-  margin: 1rem 0;
+  align-items: center;
+  margin: 0.5rem 0;
+  flex: 1;
+}
+
+.chart-wrapper .vega-embed {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.chart-wrapper .vega-embed > svg,
+.chart-wrapper .vega-embed > canvas {
+  width: 100% !important;
+  max-width: 100%;
+  height: auto !important;
+}
+
+.chart-wrapper .vega-embed summary {
+  opacity: 0.3;
+  transition: opacity 0.2s;
+}
+
+.chart-wrapper .vega-embed:hover summary {
+  opacity: 1;
 }
 
 /* ==========================================================================

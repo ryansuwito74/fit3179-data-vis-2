@@ -1,52 +1,107 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Six of Eight States and Territories Exceed or Match the 21.5% National Disorder Benchmark",
-    "subtitle": "State 12-month disorder prevalence (%) compared against the Australian national average (vertical target line)",
-    "anchor": "start"
-  },
   "width": "container",
   "height": 280,
-  "data": { "url": "data/chart12_benchmark_bullet.csv" },
+  "data": {
+    "url": "data/chart12_benchmark_bullet.csv"
+  },
   "encoding": {
     "y": {
       "field": "State",
       "type": "nominal",
       "sort": "-x",
-      "axis": { "title": null }
+      "axis": {
+        "title": null
+      }
     }
   },
   "layer": [
     {
-      "mark": { "type": "bar", "color": "#f1f5f9" },
+      "mark": {
+        "type": "bar",
+        "color": "#f1f5f9"
+      },
       "encoding": {
-        "x": { "field": "High_Band", "type": "quantitative", "scale": { "domain": [0, 35] }, "axis": { "title": "Prevalence (%)" } }
+        "x": {
+          "field": "High_Band",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              35
+            ]
+          },
+          "axis": {
+            "title": "Prevalence (%)"
+          }
+        }
       }
     },
     {
-      "mark": { "type": "bar", "color": "#cbd5e1" },
-      "encoding": { "x": { "field": "Moderate_Band", "type": "quantitative" } }
-    },
-    {
-      "mark": { "type": "bar", "color": "#94a3b8" },
-      "encoding": { "x": { "field": "Low_Band", "type": "quantitative" } }
-    },
-    {
-      "mark": { "type": "bar", "size": 10, "color": "#0f172a" },
+      "mark": {
+        "type": "bar",
+        "color": "#cbd5e1"
+      },
       "encoding": {
-        "x": { "field": "Current_Prevalence_Pct", "type": "quantitative" },
+        "x": {
+          "field": "Moderate_Band",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "bar",
+        "color": "#94a3b8"
+      },
+      "encoding": {
+        "x": {
+          "field": "Low_Band",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "bar",
+        "size": 10,
+        "color": "#0f172a"
+      },
+      "encoding": {
+        "x": {
+          "field": "Current_Prevalence_Pct",
+          "type": "quantitative"
+        },
         "tooltip": [
-          { "field": "State", "title": "State/Territory" },
-          { "field": "Current_Prevalence_Pct", "title": "State Prevalence (%)", "format": ".1f" }
+          {
+            "field": "State",
+            "title": "State/Territory"
+          },
+          {
+            "field": "Current_Prevalence_Pct",
+            "title": "State Prevalence (%)",
+            "format": ".1f"
+          }
         ]
       }
     },
     {
-      "mark": { "type": "tick", "color": "#e11d48", "thickness": 3, "size": 20 },
+      "mark": {
+        "type": "tick",
+        "color": "#e11d48",
+        "thickness": 3,
+        "size": 20
+      },
       "encoding": {
-        "x": { "field": "National_Benchmark_Pct", "type": "quantitative" },
+        "x": {
+          "field": "National_Benchmark_Pct",
+          "type": "quantitative"
+        },
         "tooltip": [
-          { "field": "National_Benchmark_Pct", "title": "National Benchmark (%)" }
+          {
+            "field": "National_Benchmark_Pct",
+            "title": "National Benchmark (%)"
+          }
         ]
       }
     }

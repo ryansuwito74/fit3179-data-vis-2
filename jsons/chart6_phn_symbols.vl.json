@@ -1,43 +1,89 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Metropolitan PHNs Carry the Highest Patient Volume While Regional Hubs Face Elevated Severity",
-    "subtitle": "Circle size shows total persons with a disorder; color shows severe disorder prevalence across 31 PHNs (2020–2022)",
-    "anchor": "start"
-  },
   "width": "container",
   "height": 450,
   "layer": [
     {
       "data": {
         "url": "data/maps/au-states-topo.json",
-        "format": { "type": "topojson", "feature": "austates" }
+        "format": {
+          "type": "topojson",
+          "feature": "austates"
+        }
       },
-      "transform": [{ "filter": "datum.id != 8" }],
-      "mark": { "type": "geoshape", "fill": "#f1f5f9", "stroke": "#cbd5e1", "strokeWidth": 1 }
+      "transform": [
+        {
+          "filter": "datum.id != 8"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f1f5f9",
+        "stroke": "#cbd5e1",
+        "strokeWidth": 1
+      }
     },
     {
-      "data": { "url": "data/chart6_phn_symbols.csv" },
-      "mark": { "type": "circle", "opacity": 0.85, "stroke": "#ffffff", "strokeWidth": 1 },
+      "data": {
+        "url": "data/chart6_phn_symbols.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "opacity": 0.85,
+        "stroke": "#ffffff",
+        "strokeWidth": 1
+      },
       "encoding": {
-        "longitude": { "field": "lon", "type": "quantitative" },
-        "latitude": { "field": "lat", "type": "quantitative" },
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
         "size": {
           "field": "Total_Disorder_Persons",
           "type": "quantitative",
-          "scale": { "range": [20, 800] },
-          "legend": { "title": "Total Patients", "format": ",.0f" }
+          "scale": {
+            "range": [
+              20,
+              800
+            ]
+          },
+          "legend": {
+            "title": "Total Patients",
+            "format": ",.0f"
+          }
         },
         "color": {
           "field": "Severe_Pct",
           "type": "quantitative",
-          "scale": { "scheme": "oranges" },
-          "legend": { "title": "Severe Cases (%)" }
+          "scale": {
+            "scheme": "oranges"
+          },
+          "legend": {
+            "title": "Severe Cases (%)"
+          }
         },
         "tooltip": [
-          { "field": "PHN_Name", "type": "nominal", "title": "PHN" },
-          { "field": "Total_Disorder_Persons", "type": "quantitative", "title": "Total Patients", "format": ",.0f" },
-          { "field": "Severe_Pct", "type": "quantitative", "title": "Severe Cases (%)", "format": ".1f" }
+          {
+            "field": "PHN_Name",
+            "type": "nominal",
+            "title": "PHN"
+          },
+          {
+            "field": "Total_Disorder_Persons",
+            "type": "quantitative",
+            "title": "Total Patients",
+            "format": ",.0f"
+          },
+          {
+            "field": "Severe_Pct",
+            "type": "quantitative",
+            "title": "Severe Cases (%)",
+            "format": ".1f"
+          }
         ]
       }
     }

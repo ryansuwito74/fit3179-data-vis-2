@@ -1,33 +1,51 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Adults Aged 18–34 Overtook Middle-Aged Cohorts as the Highest Per-Capita Service Users",
-    "subtitle": "Rank order of age cohorts by Medicare mental health service rate per 1,000 population (2015–16 to 2024–25)",
-    "anchor": "start"
-  },
   "width": "container",
   "height": 320,
-  "data": { "url": "data/chart10_bump_ranks.csv" },
+  "data": {
+    "url": "data/chart10_bump_ranks.csv"
+  },
   "encoding": {
     "x": {
       "field": "financial_year",
       "type": "ordinal",
-      "axis": { "title": "Financial Year", "labelAngle": -45 }
+      "axis": {
+        "title": "Financial Year",
+        "labelAngle": -45
+      }
     },
     "y": {
       "field": "rank",
       "type": "ordinal",
-      "axis": { "title": "Demand Rank (1 = Highest)" }
+      "axis": {
+        "title": "Demand Rank (1 = Highest)"
+      }
     },
     "color": {
       "field": "age_group",
       "type": "nominal",
-      "scale": { "scheme": "set2" },
-      "legend": { "title": "Age Cohort", "orient": "bottom" }
+      "scale": {
+        "scheme": "set2"
+      },
+      "legend": {
+        "title": "Age Cohort",
+        "orient": "bottom"
+      }
     }
   },
   "layer": [
-    { "mark": { "type": "line", "strokeWidth": 4 } },
-    { "mark": { "type": "point", "filled": true, "size": 100 } }
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 4
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 100
+      }
+    }
   ]
 }

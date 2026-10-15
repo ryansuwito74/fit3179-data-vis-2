@@ -3,16 +3,12 @@
  * Designed to maintain unified sightlines, typography, and clear legends.
  */
 const customTheme = {
-  background: "#ffffff",
+  background: "transparent",
   font: "Inter, -apple-system, BlinkMacSystemFont, sans-serif",
   
-  title: {
-    font: "Newsreader, Georgia, serif",
-    fontSize: 16,
-    fontWeight: 600,
-    color: "#0f172a",
-    anchor: "start",
-    offset: 14
+  autosize: {
+    type: "fit-x",
+    contains: "padding"
   },
 
   axis: {
