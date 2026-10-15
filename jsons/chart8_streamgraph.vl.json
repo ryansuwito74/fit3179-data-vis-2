@@ -3,9 +3,23 @@
   "width": "container",
   "height": 300,
   "data": {
-    "url": "data/chart8_streamgraph_services.csv"
+    "url": "data/chart8_streamgraph_mbs_services.csv"
   },
-  "mark": "area",
+  "params": [
+    {
+      "name": "stream_hover",
+      "select": {
+        "type": "point",
+        "fields": ["provider_type"],
+        "on": "pointerover",
+        "clear": "pointerout"
+      }
+    }
+  ],
+  "mark": {
+    "type": "area",
+    "interpolate": "monotone"
+  },
   "encoding": {
     "x": {
       "field": "year_date",
@@ -13,7 +27,8 @@
       "axis": {
         "title": "Financial Year",
         "format": "%Y",
-        "tickCount": 10
+        "tickCount": 9,
+        "grid": false
       }
     },
     "y": {
@@ -26,28 +41,49 @@
       "field": "provider_type",
       "type": "nominal",
       "scale": {
-        "scheme": "tableau10"
+        "domain": [
+          "General practitioners",
+          "Other psychologists",
+          "Clinical psychologists",
+          "Psychiatrists",
+          "Other allied health providers"
+        ],
+        "range": [
+          "#0d9488",
+          "#d97706",
+          "#e11d48",
+          "#6366f1",
+          "#64748b"
+        ]
       },
       "legend": {
-        "title": "Provider Type",
-        "orient": "right"
+        "title": "Provider Category",
+        "orient": "top",
+        "direction": "horizontal"
       }
+    },
+    "opacity": {
+      "condition": {
+        "param": "stream_hover",
+        "value": 1
+      },
+      "value": 0.35
     },
     "tooltip": [
       {
         "field": "financial_year",
         "type": "nominal",
-        "title": "Year"
+        "title": "Financial Year"
       },
       {
         "field": "provider_type",
         "type": "nominal",
-        "title": "Provider"
+        "title": "Provider Type"
       },
       {
         "field": "services",
         "type": "quantitative",
-        "title": "Consultations",
+        "title": "Annual Consultations",
         "format": ",.0f"
       }
     ]

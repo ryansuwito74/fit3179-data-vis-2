@@ -168,16 +168,16 @@
           </div>
         </div>
 
-        <!-- Chart 8: Proportional Symbol Map -->
+        <!-- Chart 8: Streamgraph (Medicare Service Modality Trends) -->
         <div class="pure-u-1 pure-u-md-1-2">
           <div class="card">
             <div>
-              <h3 class="card-title">Medicare Care Plan Subsidies</h3>
-              <div id="vis-map-symbols" class="chart-wrapper"></div>
+              <h3 class="card-title">Evolution of Medicare Mental Health Consultations</h3>
+              <div id="vis-stream-modalities" class="chart-wrapper"></div>
             </div>
             <p class="narrative-prose">
-              <span class="lead-insight">Resource Clustering:</span>
-              Total MBS mental health rebates cluster along eastern urban coastal corridors, highlighting regional billing deficits.
+              <span class="lead-insight">Pandemic Surge:</span>
+              Annual consultations surged to 14 million sessions during the 2020–21 pandemic peak, driven by expanded GP mental health plans and psychology subsidies.
             </p>
           </div>
         </div>
@@ -276,6 +276,7 @@
     renderChart('#vis-map-flow', 'jsons/chart5_parallel_coords.vl.json');
     renderChart('#vis-phn-symbols', 'jsons/chart6_phn_symbols.vl.json');
     renderChart('#vis-dumbbell-waits', 'jsons/chart7_dumbbell_gender.vl.json');
+    renderChart('#vis-stream-modalities', 'jsons/chart8_streamgraph.vl.json');
     // ...
   </script>
 </body>
