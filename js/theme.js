@@ -29,8 +29,8 @@ const customTheme = {
   },
 
   legend: {
-    orient: "top-right",
-    layout: { direction: "horizontal" },
+    orient: "bottom",
+    direction: "horizontal",
     titleFont: "Inter, sans-serif",
     titleFontSize: 12,
     titleFontWeight: 600,

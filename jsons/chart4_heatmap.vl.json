@@ -60,7 +60,9 @@
             "scheme": "tealblues"
           },
           "legend": {
-            "title": "Share of Cohort (%)"
+            "title": "Prevalence Share (%)",
+            "orient": "bottom",
+            "direction": "horizontal"
           }
         },
         "stroke": {

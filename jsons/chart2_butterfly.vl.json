@@ -80,7 +80,8 @@
           },
           "legend": {
             "title": "Gender",
-            "orient": "top"
+            "orient": "bottom",
+            "direction": "horizontal"
           }
         },
         "tooltip": [

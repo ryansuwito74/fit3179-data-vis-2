@@ -1,5 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "autosize": {
+    "type": "pad",
+    "contains": "padding"
+  },
   "data": {
     "url": "data/chart11_treemap_diagnoses.csv"
   },
@@ -16,9 +20,9 @@
     }
   },
   "spec": {
-    "width": 320,
+    "width": 280,
     "height": {
-      "step": 23
+      "step": 21
     },
     "params": [
       {

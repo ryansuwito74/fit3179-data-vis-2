@@ -61,7 +61,9 @@
       },
       "legend": {
         "title": "Age Cohort",
-        "orient": "right"
+        "orient": "bottom",
+        "direction": "horizontal",
+        "columns": 4
       }
     },
     "tooltip": [

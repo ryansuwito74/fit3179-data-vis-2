@@ -58,8 +58,9 @@
       },
       "legend": {
         "title": "Provider Category",
-        "orient": "top",
-        "direction": "horizontal"
+        "orient": "bottom",
+        "direction": "horizontal",
+        "columns": 3
       }
     },
     "opacity": {

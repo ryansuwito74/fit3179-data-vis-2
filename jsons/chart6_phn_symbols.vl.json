@@ -53,7 +53,9 @@
           },
           "legend": {
             "title": "Total Patients",
-            "format": ",.0f"
+            "format": ",.0f",
+            "orient": "bottom",
+            "direction": "horizontal"
           }
         },
         "color": {
@@ -63,7 +65,9 @@
             "scheme": "oranges"
           },
           "legend": {
-            "title": "Severe Cases (%)"
+            "title": "Severe Cases (%)",
+            "orient": "bottom",
+            "direction": "horizontal"
           }
         },
         "stroke": {

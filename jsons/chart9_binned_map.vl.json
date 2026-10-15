@@ -57,7 +57,9 @@
           },
           "legend": {
             "title": "Diagnosed Patients",
-            "format": ",.0f"
+            "format": ",.0f",
+            "orient": "bottom",
+            "direction": "horizontal"
           }
         },
         "color": {
@@ -69,7 +71,9 @@
           },
           "legend": {
             "title": "Prevalence (%)",
-            "format": ".1f"
+            "format": ".1f",
+            "orient": "bottom",
+            "direction": "horizontal"
           }
         },
         "stroke": {

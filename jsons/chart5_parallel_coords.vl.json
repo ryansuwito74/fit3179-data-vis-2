@@ -139,7 +139,8 @@
           },
           "legend": {
             "title": "State",
-            "orient": "top"
+            "orient": "bottom",
+            "direction": "horizontal"
           }
         },
         "strokeWidth": {
