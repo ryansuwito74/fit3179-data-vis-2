@@ -8,12 +8,15 @@
   "width": "container",
   "height": 400,
   "data": {
-    "url": "data/maps/aus_states.topojson",
-    "format": { "type": "topojson", "feature": "STE_2021_AUST_GDA2020" }
+    "url": "data/maps/au-states-topo.json",
+    "format": { "type": "topojson", "feature": "austates" }
   },
   "transform": [
     {
-      "lookup": "properties.STE_NAME21",
+      "filter": "datum.id != 8"
+    },
+    {
+      "lookup": "properties.STATE_NAME",
       "from": {
         "data": { "url": "data/chart1_state_prevalence.csv" },
         "key": "State",
@@ -31,7 +34,7 @@
       "legend": { "title": "Disorder Rate (%)", "orient": "right" }
     },
     "tooltip": [
-      { "field": "properties.STE_NAME21", "type": "nominal", "title": "State" },
+      { "field": "properties.STATE_NAME", "type": "nominal", "title": "State" },
       { "field": "Any_12m_Disorder_Pct", "type": "quantitative", "title": "Prevalence (%)", "format": ".1f" }
     ]
   }

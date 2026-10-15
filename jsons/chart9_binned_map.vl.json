@@ -10,13 +10,14 @@
   "layer": [
     {
       "data": {
-        "url": "data/maps/aus_states.topojson",
-        "format": { "type": "topojson", "feature": "STE_2021_AUST_GDA2020" }
+        "url": "data/maps/au-states-topo.json",
+        "format": { "type": "topojson", "feature": "austates" }
       },
+      "transform": [{ "filter": "datum.id != 8" }],
       "mark": { "type": "geoshape", "fill": "#f8fafc", "stroke": "#cbd5e1" }
     },
     {
-      "data": { "url": "data/chart9_sa4_binned.csv" },
+      "data": { "url": "data/chart9_sa4_binned_map.csv" },
       "mark": { "type": "circle", "opacity": 0.8 },
       "encoding": {
         "longitude": { "field": "lon", "type": "quantitative" },
