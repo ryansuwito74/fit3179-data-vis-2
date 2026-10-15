@@ -2,91 +2,147 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": 300,
-  "data": {
-    "url": "data/chart8_streamgraph_mbs_services.csv"
-  },
-  "params": [
+  "layer": [
     {
-      "name": "stream_hover",
-      "select": {
-        "type": "point",
-        "fields": ["provider_type"],
-        "on": "pointerover",
-        "clear": "pointerout"
-      }
-    }
-  ],
-  "mark": {
-    "type": "area",
-    "interpolate": "monotone"
-  },
-  "encoding": {
-    "x": {
-      "field": "year_date",
-      "type": "temporal",
-      "axis": {
-        "title": "Financial Year",
-        "format": "%Y",
-        "tickCount": 9,
-        "grid": false
-      }
-    },
-    "y": {
-      "field": "services",
-      "type": "quantitative",
-      "stack": "center",
-      "axis": null
-    },
-    "color": {
-      "field": "provider_type",
-      "type": "nominal",
-      "scale": {
-        "domain": [
-          "General practitioners",
-          "Other psychologists",
-          "Clinical psychologists",
-          "Psychiatrists",
-          "Other allied health providers"
-        ],
-        "range": [
-          "#0d9488",
-          "#d97706",
-          "#e11d48",
-          "#6366f1",
-          "#64748b"
+      "data": {
+        "values": [
+          {
+            "start_dt": "2020-03-01",
+            "end_dt": "2021-09-01",
+            "label": "Pandemic Expansion Peak"
+          }
         ]
       },
-      "legend": {
-        "title": "Provider Category",
-        "orient": "bottom",
-        "direction": "horizontal",
-        "columns": 3
+      "mark": {
+        "type": "rect",
+        "color": "#f1f5f9",
+        "opacity": 0.8
+      },
+      "encoding": {
+        "x": {
+          "field": "start_dt",
+          "type": "temporal"
+        },
+        "x2": {
+          "field": "end_dt"
+        }
       }
     },
-    "opacity": {
-      "condition": {
-        "param": "stream_hover",
-        "value": 1
+    {
+      "data": {
+        "url": "data/chart8_streamgraph_mbs_services.csv"
       },
-      "value": 0.35
-    },
-    "tooltip": [
-      {
-        "field": "financial_year",
-        "type": "nominal",
-        "title": "Financial Year"
+      "params": [
+        {
+          "name": "stream_hover",
+          "select": {
+            "type": "point",
+            "fields": [
+              "provider_type"
+            ],
+            "on": "pointerover",
+            "clear": "pointerout"
+          }
+        }
+      ],
+      "mark": {
+        "type": "area",
+        "interpolate": "monotone"
       },
-      {
-        "field": "provider_type",
-        "type": "nominal",
-        "title": "Provider Type"
-      },
-      {
-        "field": "services",
-        "type": "quantitative",
-        "title": "Annual Consultations",
-        "format": ",.0f"
+      "encoding": {
+        "x": {
+          "field": "year_date",
+          "type": "temporal",
+          "axis": {
+            "title": "Financial Year",
+            "format": "%Y",
+            "tickCount": 9,
+            "grid": false
+          }
+        },
+        "y": {
+          "field": "services",
+          "type": "quantitative",
+          "stack": "center",
+          "axis": null
+        },
+        "color": {
+          "field": "provider_type",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "General practitioners",
+              "Other psychologists",
+              "Clinical psychologists",
+              "Psychiatrists",
+              "Other allied health providers"
+            ],
+            "range": [
+              "#0d9488",
+              "#d97706",
+              "#e11d48",
+              "#6366f1",
+              "#64748b"
+            ]
+          },
+          "legend": {
+            "title": "Provider Category",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "columns": 3
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "stream_hover",
+            "value": 1
+          },
+          "value": 0.4
+        },
+        "tooltip": [
+          {
+            "field": "financial_year",
+            "title": "Financial Year"
+          },
+          {
+            "field": "provider_type",
+            "title": "Provider Type"
+          },
+          {
+            "field": "services",
+            "title": "Annual Consultations",
+            "format": ",.0f"
+          }
+        ]
       }
-    ]
-  }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "peak_dt": "2021-01-01",
+            "label": "Pandemic Surge (14.0M Total Sessions)"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "top",
+        "dy": -135,
+        "fontSize": 10.5,
+        "fontWeight": 700,
+        "fill": "#0f172a"
+      },
+      "encoding": {
+        "x": {
+          "field": "peak_dt",
+          "type": "temporal"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    }
+  ]
 }

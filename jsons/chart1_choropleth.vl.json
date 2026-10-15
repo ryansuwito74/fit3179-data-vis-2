@@ -1,65 +1,143 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 360,
-  "data": {
-    "url": "data/maps/au-states-topo.json",
-    "format": {
-      "type": "topojson",
-      "feature": "austates"
-    }
+  "height": 380,
+  "title": {
+    "text": "12-Month Mental Disorder Prevalence by State & Territory",
+    "subtitle": "Percentage of resident population reporting an active disorder (ABS National Health Survey)",
+    "fontSize": 13,
+    "subtitleFontSize": 11,
+    "subtitleColor": "#475569",
+    "anchor": "start",
+    "frame": "group",
+    "offset": 8
   },
-  "transform": [
-    {
-      "filter": "datum.id != 8"
-    },
-    {
-      "lookup": "properties.STATE_NAME",
-      "from": {
-        "data": {
-          "url": "data/chart1_state_prevalence.csv"
-        },
-        "key": "State",
-        "fields": [
-          "Any_12m_Disorder_Pct",
-          "Abbrev"
-        ]
-      }
-    }
-  ],
   "projection": {
     "type": "equirectangular"
   },
-  "mark": {
-    "type": "geoshape",
-    "stroke": "#ffffff",
-    "strokeWidth": 1
-  },
-  "encoding": {
-    "color": {
-      "field": "Any_12m_Disorder_Pct",
-      "type": "quantitative",
-      "scale": {
-        "scheme": "teals"
+  "layer": [
+    {
+      "data": {
+        "url": "data/maps/au-states-topo.json",
+        "format": {
+          "type": "topojson",
+          "feature": "austates"
+        }
       },
-      "legend": {
-        "title": "Disorder Rate (%)",
-        "orient": "bottom",
-        "direction": "horizontal"
+      "transform": [
+        {
+          "filter": "datum.id != 8"
+        },
+        {
+          "lookup": "properties.STATE_NAME",
+          "from": {
+            "data": {
+              "url": "data/chart1_state_prevalence.csv"
+            },
+            "key": "State",
+            "fields": [
+              "Any_12m_Disorder_Pct",
+              "Abbrev"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#ffffff",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "color": {
+          "field": "Any_12m_Disorder_Pct",
+          "type": "quantitative",
+          "scale": {
+            "scheme": "teals",
+            "domain": [
+              18,
+              30
+            ]
+          },
+          "legend": {
+            "title": "Adult Disorder Prevalence (%)",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "gradientLength": 220,
+            "format": ".1f"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "properties.STATE_NAME",
+            "title": "State / Territory"
+          },
+          {
+            "field": "Any_12m_Disorder_Pct",
+            "title": "Prevalence (%)",
+            "format": ".1f"
+          }
+        ]
       }
     },
-    "tooltip": [
-      {
-        "field": "properties.STATE_NAME",
-        "type": "nominal",
-        "title": "State"
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 121.5,
+            "lat": -25.5,
+            "label": "WA: 23.1%"
+          },
+          {
+            "lon": 133.5,
+            "lat": -19.5,
+            "label": "NT: 28.8%"
+          },
+          {
+            "lon": 135.5,
+            "lat": -30.0,
+            "label": "SA: 21.6%"
+          },
+          {
+            "lon": 144.5,
+            "lat": -22.5,
+            "label": "QLD: 23.7%"
+          },
+          {
+            "lon": 147.0,
+            "lat": -32.5,
+            "label": "NSW: 19.5%"
+          },
+          {
+            "lon": 145.0,
+            "lat": -36.8,
+            "label": "VIC: 21.4%"
+          },
+          {
+            "lon": 146.5,
+            "lat": -42.0,
+            "label": "TAS: 19.8%"
+          }
+        ]
       },
-      {
-        "field": "Any_12m_Disorder_Pct",
-        "type": "quantitative",
-        "title": "Prevalence (%)",
-        "format": ".1f"
+      "mark": {
+        "type": "text",
+        "fontSize": 10.5,
+        "fontWeight": 700,
+        "fill": "#0f172a"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
       }
-    ]
-  }
+    }
+  ]
 }

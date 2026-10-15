@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Mental Health Landscape in Australia | FIT3179</title>
 
-  <!-- Typography: Newsreader (Editorial Serif) & Inter (Sans-Serif) -->
+  <!-- Typography: Newsreader (Editorial Serif) & Inter (Clean Sans-Serif) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
@@ -30,15 +30,15 @@
     <header class="header-hero">
       <h1>The Mental Health Landscape in Australia</h1>
       <p class="lead-text">
-        Examining regional disparity, demographic vulnerability, and structural healthcare constraints across the nation.
+        An investigation into regional disparities, lifecycle vulnerabilities, and systemic clinical capacity across the Commonwealth.
       </p>
       
       <div class="metadata-grid">
         <div><strong>Author:</strong> Ryan Yu-Wen Suwito</div>
         <div><strong>Student ID:</strong> 34076565</div>
-        <div><strong>Unit:</strong> FIT3179 Data Visualisation (A2)</div>
+        <div><strong>Unit:</strong> FIT3179 Data Visualisation 2</div>
         <div><strong>Date:</strong> October 2026</div>
-        <div><strong>Data Sources:</strong> ABS, AIHW, Department of Health</div>
+        <div><strong>Data Sources:</strong> ABS, AIHW, Department of Health, MBS</div>
       </div>
     </header>
 
@@ -47,6 +47,9 @@
       <div class="section-header">
         <span class="section-number">Section 01</span>
         <h2>Prevalence & Demographic Vulnerability</h2>
+        <p class="section-lead">
+          Establishing baseline national disorder distribution and examining pronounced demographic vulnerabilities across gender and age cohorts.
+        </p>
       </div>
 
       <div class="pure-g">
@@ -55,11 +58,14 @@
           <div class="card">
             <div>
               <h3 class="card-title">Geographic Distribution of Mental Disorders</h3>
+              <p class="chart-subtitle">
+                12-month adult mental disorder prevalence across Australian States and Territories (ABS NHS baseline).
+              </p>
               <div id="vis-map-distress" class="chart-wrapper"></div>
             </div>
             <p class="narrative-prose">
               <span class="lead-insight">Regional Exposure:</span>
-              Regional and outer territories report the highest distress rates, bypassing the urbanised east coast.
+              Northern Territory (28.8%) and Queensland (23.7%) record the highest active disorder rates, exceeding southern metropolitan baselines.
             </p>
           </div>
         </div>
@@ -69,11 +75,14 @@
           <div class="card">
             <div>
               <h3 class="card-title">Anxiety by Age Cohort & Gender</h3>
+              <p class="chart-subtitle">
+                Proportion reporting 12-month anxiety disorders, comparing <span class="legend-token token-female-teal">■ Female</span> (left) and <span class="legend-token token-male-amber">■ Male</span> (right) cohorts across lifecycle brackets.
+              </p>
               <div id="vis-pyramid-anxiety" class="chart-wrapper"></div>
             </div>
             <p class="narrative-prose">
               <span class="lead-insight">Young Demographics:</span>
-              Females aged 16–24 experience the highest relative anxiety burden, nearly doubling observed rates among older demographics.
+              Young females aged 16–24 carry the highest relative anxiety burden (44.8%), nearly doubling rates observed among older demographics.
             </p>
           </div>
         </div>
@@ -85,6 +94,9 @@
       <div class="section-header">
         <span class="section-number">Section 02</span>
         <h2>Long-Term Shifts & Socio-Economic Burden</h2>
+        <p class="section-lead">
+          Analyzing ten-year psychological distress shifts and evaluating how distress severity concentrates across age cohorts.
+        </p>
       </div>
 
       <div class="pure-g">
@@ -93,11 +105,14 @@
           <div class="card">
             <div>
               <h3 class="card-title">10-Year Psychological Distress Drift</h3>
+              <p class="chart-subtitle">
+                Prevalence change (2011 to 2021), tracking the steep escalation among <span class="legend-token token-youth-red">■ Youth (15–24)</span> relative to adult cohorts.
+              </p>
               <div id="vis-slope-distress" class="chart-wrapper"></div>
             </div>
             <p class="narrative-prose">
               <span class="lead-insight">Steepest Trajectory:</span>
-              Severe distress rates among youth grew by over 12 percentage points over the decade, widening the gap across generations.
+              Severe psychological distress among youth surged by +12.4 percentage points over the decade, widening cross-generational disparity.
             </p>
           </div>
         </div>
@@ -107,35 +122,44 @@
           <div class="card">
             <div>
               <h3 class="card-title">Psychological Distress Severity Across Age Cohorts</h3>
+              <p class="chart-subtitle">
+                K10 distress breakdown across cohorts; high and very high distress disproportionately impacts younger Australians.
+              </p>
               <div id="vis-heat-socioeconomic" class="chart-wrapper"></div>
             </div>
             <p class="narrative-prose">
-              <span class="lead-insight">Severe Distress Concentration:</span>
-              Over 25% of young Australians aged 16–24 experience high or very high psychological distress, more than 2.5 times the rate observed in older cohorts.
+              <span class="lead-insight">Distress Concentration:</span>
+              Over 25.8% of Australians aged 16–24 endure high or very high psychological distress, 2.5 times the rate observed in older cohorts.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 3: GEOGRAPHIC INEQUITY & PATIENT MOBILITY -->
+    <!-- SECTION 3: GEOGRAPHIC INEQUITY & CLINICAL UTILIZATION -->
     <section class="section-block">
       <div class="section-header">
         <span class="section-number">Section 03</span>
-        <h2>Geographic Inequity & Patient Mobility</h2>
+        <h2>Geographic Inequity & Clinical Utilization</h2>
+        <p class="section-lead">
+          Investigating multi-dimensional psychiatric burden, Primary Health Network allocations, and structural gender gaps in Medicare uptake.
+        </p>
       </div>
 
       <div class="pure-g">
-        <!-- Chart 5: Parallel Coordinates Plot -->
+        <!-- Chart 5: Grouped Bar Clinical Profile -->
         <div class="pure-u-1 pure-u-md-1-2">
           <div class="card">
             <div>
               <h3 class="card-title">Multi-Dimensional Clinical Profile by State</h3>
+              <p class="chart-subtitle">
+                Comparing 5 psychiatric indicators across jurisdictions; <span class="legend-token token-qld-red">■ Queensland</span> persistently outpaces southern states on active psychiatric burden.
+              </p>
               <div id="vis-map-flow" class="chart-wrapper"></div>
             </div>
             <p class="narrative-prose">
-              <span class="lead-insight">Multi-Axis Burden:</span>
-              Queensland records the highest concurrent rates of active 12-month disorders (23.7%), severe distress (18.9%), and lifetime suicidal ideation (21.1%) among major states.
+              <span class="lead-insight">Cross-Metric Burden:</span>
+              Queensland exhibits concurrent peaks in active disorders (23.7%), severe distress (18.9%), and lifetime suicidal ideation (21.1%).
             </p>
           </div>
         </div>
@@ -144,12 +168,15 @@
         <div class="pure-u-1 pure-u-md-1-2">
           <div class="card">
             <div>
-              <h3 class="card-title">Patient Volume & Severity Across Primary Health Networks</h3>
+              <h3 class="card-title">PHN Patient Volume & Disorder Severity</h3>
+              <p class="chart-subtitle">
+                Bubble size denotes total patients diagnosed; color intensity denotes percentage of patients with severe mental illness.
+              </p>
               <div id="vis-phn-symbols" class="chart-wrapper"></div>
             </div>
             <p class="narrative-prose">
-              <span class="lead-insight">Metropolitan Volume:</span>
-              Major urban PHNs carry the highest raw patient volume, while regional and outer hubs record elevated severe disorder concentrations.
+              <span class="lead-insight">Urban Volume vs Regional Severity:</span>
+              Metropolitan PHNs absorb the largest raw caseloads, while regional and remote networks report elevated severe case ratios.
             </p>
           </div>
         </div>
@@ -159,11 +186,14 @@
           <div class="card">
             <div>
               <h3 class="card-title">Medicare Service Uptake by Provider & Gender</h3>
+              <p class="chart-subtitle">
+                Per-capita consultation gap between <span class="legend-token token-female-rose">■ Female</span> and <span class="legend-token token-male-teal">■ Male</span> patients across primary mental health provider tiers.
+              </p>
               <div id="vis-dumbbell-waits" class="chart-wrapper"></div>
             </div>
             <p class="narrative-prose">
-              <span class="lead-insight">The Gender Service Gap:</span>
-              Women access clinical psychology and GP mental health plans at nearly double the rate of men, with service uptake gaps exceeding 70 visits per 1,000 residents across primary care providers.
+              <span class="lead-insight">The Gender Utilization Divide:</span>
+              Women access clinical psychology and GP plans at nearly double the rate of men, exceeding 70 visits per 1,000 residents in primary care.
             </p>
           </div>
         </div>
@@ -173,23 +203,28 @@
           <div class="card">
             <div>
               <h3 class="card-title">Evolution of Medicare Mental Health Consultations</h3>
+              <p class="chart-subtitle">
+                Annual consultation volume by clinician type, highlighting the <span style="font-weight:700;color:#0f172a;">2020–21 Pandemic Surge (14.0M sessions)</span>.
+              </p>
               <div id="vis-stream-modalities" class="chart-wrapper"></div>
             </div>
             <p class="narrative-prose">
-              <span class="lead-insight">Pandemic Surge:</span>
-              Annual consultations surged to 14 million sessions during the 2020–21 pandemic peak, driven by expanded GP mental health plans and psychology subsidies.
+              <span class="lead-insight">Telehealth & GP Surge:</span>
+              Consultations peaked at 14 million sessions during COVID-19 lockdowns, driven by subsidized psychology and GP management items.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 4: SYSTEM CAPACITY & TREATMENT ATTRITION -->
-    <!-- SECTION 4: SYSTEM CAPACITY & TREATMENT ATTRITION -->
+    <!-- SECTION 4: SYSTEM CAPACITY & TREATMENT BENCHMARKS -->
     <section class="section-block">
       <div class="section-header">
         <span class="section-number">Section 04</span>
-        <h2>System Capacity & Treatment Pathways</h2>
+        <h2>System Capacity & Treatment Benchmarks</h2>
+        <p class="section-lead">
+          Evaluating sub-regional clinical demand, lifecycle consultation rank dynamics, clinical diagnostic composition, and state benchmark variance.
+        </p>
       </div>
 
       <div class="pure-g">
@@ -198,11 +233,14 @@
           <div class="card">
             <div>
               <h3 class="card-title">Spatial Distribution of SA4 Diagnostic Prevalence</h3>
+              <p class="chart-subtitle">
+                Statistical Area 4 (SA4) diagnostic rates across Australia, highlighting non-metropolitan demand hotspots.
+              </p>
               <div id="vis-sa4-binned" class="chart-wrapper"></div>
             </div>
             <p class="narrative-prose">
-              <span class="lead-insight">Regional Concentration:</span>
-              Regional hubs exhibit heightened diagnostic rates exceeding 12% in areas like Ballarat (12.5%) and Newcastle (12.2%), contrasting with sub-6% rates across outer metropolitan corridors.
+              <span class="lead-insight">Regional Demand Hotspots:</span>
+              Regional hubs exhibit diagnostic rates exceeding 12% in areas like Ballarat (12.5%) and Newcastle (12.2%), contrasting with lower outer-suburban rates.
             </p>
           </div>
         </div>
@@ -212,11 +250,14 @@
           <div class="card">
             <div>
               <h3 class="card-title">Demand Rank Shifts Across Age Cohorts</h3>
+              <p class="chart-subtitle">
+                Tracking annual demand ranks (1 = Highest); <span class="legend-token token-youth-red">■ Youth (18–24)</span> surged to rank 1 during the 2020–22 pandemic shock.
+              </p>
               <div id="vis-bump-ranks" class="chart-wrapper"></div>
             </div>
             <p class="narrative-prose">
-              <span class="lead-insight">Cohort Trajectories:</span>
-              Young adults aged 15–24 persistently dominate primary consultation demand ranks, while middle-age cohort ranks have stabilized following pandemic spikes.
+              <span class="lead-insight">Rank Dynamics:</span>
+              Young adults (18–24) overtook all older demographics in MBS service intensity by 2019–20, maintaining peak utilization through 2022.
             </p>
           </div>
         </div>
@@ -226,11 +267,14 @@
           <div class="card">
             <div>
               <h3 class="card-title">Clinical Diagnoses Breakdown by Disorder Category</h3>
+              <p class="chart-subtitle">
+                Diagnosed prevalence across <span class="legend-token token-anxiety">■ Anxiety</span>, <span class="legend-token token-affective">■ Affective</span>, and <span class="legend-token token-substance">■ Substance Use</span> disorder families.
+              </p>
               <div id="vis-faceted-diagnoses" class="chart-wrapper"></div>
             </div>
             <p class="narrative-prose">
               <span class="lead-insight">Diagnostic Composition:</span>
-              Anxiety conditions represent the largest single diagnostic class, led by social phobia and generalized anxiety, followed closely by depressive episodes.
+              Anxiety conditions represent the largest clinical burden, led by social phobia (401.8k) and PTSD (295.8k), followed by depressive episodes.
             </p>
           </div>
         </div>
@@ -240,11 +284,14 @@
           <div class="card">
             <div>
               <h3 class="card-title">State Prevalence Against National Benchmarks</h3>
+              <p class="chart-subtitle">
+                State rates evaluated against qualitative distress bands and the <span class="legend-token token-benchmark-red">❙ National Target Benchmark (21.5%)</span>.
+              </p>
               <div id="vis-bullet-benchmark" class="chart-wrapper"></div>
             </div>
             <p class="narrative-prose">
               <span class="lead-insight">Target Variance:</span>
-              Tasmania and Queensland exceed the national threshold benchmark for high-distress prevalence, while Victoria and New South Wales track closely along moderate bands.
+              Northern Territory (28.8%) and Queensland (23.7%) substantially exceed the 21.5% national threshold, while Victoria (21.4%) aligns with targets.
             </p>
           </div>
         </div>
@@ -283,7 +330,7 @@
       }).catch(console.error);
     }
 
-    // Embed triggers (Ready to point to your JSON specifications)
+    // Embed triggers
     renderChart('#vis-map-distress', 'jsons/chart1_choropleth.vl.json');
     renderChart('#vis-pyramid-anxiety', 'jsons/chart2_butterfly.vl.json');
     renderChart('#vis-slope-distress', 'jsons/chart3_slopegraph.vl.json');

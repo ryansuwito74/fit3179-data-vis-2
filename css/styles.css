@@ -8,8 +8,8 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-  background-color: #f1f5f9; /* Soft cool-neutral background for figure-ground */
-  color: #1e293b;
+  background-color: #f8fafc; /* Crisp, clean neutral background for strong figure-ground */
+  color: #0f172a;
 }
 
 body {
@@ -21,51 +21,53 @@ body {
 }
 
 /* ==========================================================================
-   CONTAINER & SIGHTLINE CONTROLS
+   CONTAINER & SIGHTLINE CONTROLS (Column Grid & Breathing Room)
    ========================================================================== */
 .page-container {
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 3rem 1.5rem;
+  padding: 3.5rem 2rem;
 }
 
 /* ==========================================================================
-   HEADER & METADATA BAR (Fixes Assignment 1 feedback)
+   HEADER & METADATA BAR
    ========================================================================== */
 .header-hero {
   background-color: #ffffff;
   border: 1px solid #e2e8f0;
   border-left: 6px solid #0d9488; /* Deep teal anchor */
-  border-radius: 8px;
-  padding: 2.5rem;
-  margin-bottom: 2.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: 2.75rem;
+  margin-bottom: 3.5rem;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
 }
 
 .header-hero h1 {
   font-family: 'Newsreader', Georgia, serif;
-  font-size: 2.5rem;
+  font-size: 2.65rem;
   font-weight: 700;
   color: #0f172a;
-  margin: 0 0 0.75rem 0;
-  letter-spacing: -0.02em;
+  margin: 0 0 0.85rem 0;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
 }
 
 .header-hero .lead-text {
   font-size: 1.15rem;
-  color: #475569;
-  max-width: 60ch; /* ~8-10 words per line */
-  margin-bottom: 1.5rem;
+  color: #334155;
+  max-width: 58ch; /* Enforce line length <= 60 characters (~8-10 words/line) */
+  margin-bottom: 1.75rem;
+  line-height: 1.6;
 }
 
 .metadata-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid #e2e8f0;
+  gap: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f1f5f9;
   font-size: 0.875rem;
-  color: #64748b;
+  color: #475569;
 }
 
 .metadata-grid strong {
@@ -73,33 +75,42 @@ body {
 }
 
 /* ==========================================================================
-   SECTION CONTAINERS & HEADINGS
+   SECTION CONTAINERS & HEADINGS (Narrative Partitioning)
    ========================================================================== */
 .section-block {
-  margin-bottom: 3.5rem;
+  margin-bottom: 4.5rem; /* Ample white space to reduce fatigue */
 }
 
 .section-header {
-  margin-bottom: 1.75rem;
+  margin-bottom: 2rem;
   border-bottom: 2px solid #e2e8f0;
-  padding-bottom: 0.75rem;
+  padding-bottom: 0.85rem;
 }
 
 .section-number {
-  font-size: 0.85rem;
+  font-size: 0.825rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   font-weight: 700;
   color: #0d9488;
   display: block;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.35rem;
 }
 
 .section-header h2 {
   font-family: 'Newsreader', Georgia, serif;
-  font-size: 1.85rem;
+  font-size: 2rem;
   color: #0f172a;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.015em;
+}
+
+.section-header .section-lead {
+  font-size: 1.05rem;
+  color: #475569;
+  max-width: 58ch;
   margin: 0;
+  line-height: 1.55;
 }
 
 /* ==========================================================================
@@ -108,22 +119,56 @@ body {
 .card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 1.75rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(100% - 1.5rem);
+  height: calc(100% - 2rem);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
 }
 
 .card-title {
   font-family: 'Newsreader', Georgia, serif;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
+  font-weight: 700;
   color: #0f172a;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.4rem 0;
+  line-height: 1.3;
 }
+
+.chart-subtitle {
+  font-size: 0.925rem;
+  color: #475569;
+  max-width: 58ch;
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+/* Inline Legend Tokens */
+.legend-token {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 600;
+}
+
+.token-female-teal { color: #0d9488; }
+.token-male-amber { color: #d97706; }
+.token-female-rose { color: #e11d48; }
+.token-male-teal { color: #0d9488; }
+.token-youth-red { color: #e11d48; }
+.token-benchmark-red { color: #e11d48; }
+.token-qld-red { color: #e11d48; }
+.token-anxiety { color: #6366f1; }
+.token-affective { color: #f43f5e; }
+.token-substance { color: #0ea5e9; }
 
 .chart-wrapper {
   width: 100%;
@@ -131,7 +176,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
   flex: 1;
 }
 
@@ -149,23 +194,25 @@ body {
 }
 
 .chart-wrapper .vega-embed summary {
-  opacity: 0.3;
+  opacity: 0.25;
   transition: opacity 0.2s;
 }
 
 .chart-wrapper .vega-embed:hover summary {
-  opacity: 1;
+  opacity: 0.9;
 }
 
 /* ==========================================================================
-   TYPOGRAPHY RULES (Assignment 1 constraint: max 10 words per line)
+   TYPOGRAPHY RULES (Enforced line lengths <= 60 characters)
    ========================================================================== */
 .narrative-prose {
-  font-size: 1.05rem;
-  color: #334155;
-  line-height: 1.65;
-  max-width: 58ch; /* Enforces strict ~9-10 words per line maximum */
-  margin: 0.5rem 0 0 0;
+  font-size: 1.025rem;
+  color: #1e293b;
+  line-height: 1.6;
+  max-width: 58ch; /* Strict 58-60 characters maximum (~8-10 words/line) */
+  margin: 0.75rem 0 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f1f5f9;
 }
 
 .lead-insight {
@@ -175,17 +222,18 @@ body {
 }
 
 /* ==========================================================================
-   FOOTER (Assignment 1 metadata requirement)
+   FOOTER (Metadata & Provenance)
    ========================================================================== */
 footer {
-  margin-top: 4rem;
-  padding: 2.5rem 0;
-  border-top: 1px solid #cbd5e1;
-  color: #64748b;
+  margin-top: 5rem;
+  padding: 3rem 0;
+  border-top: 2px solid #e2e8f0;
+  color: #475569;
   font-size: 0.875rem;
 }
 
 footer p {
-  max-width: 60ch;
+  max-width: 58ch;
   margin: 0.35rem 0;
+  line-height: 1.5;
 }

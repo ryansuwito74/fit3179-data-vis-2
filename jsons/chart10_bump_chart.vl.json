@@ -5,6 +5,64 @@
   "layer": [
     {
       "data": {
+        "values": [
+          {
+            "start_yr": "2020–21",
+            "end_yr": "2021–22"
+          }
+        ]
+      },
+      "mark": {
+        "type": "rect",
+        "color": "#f1f5f9",
+        "opacity": 0.7
+      },
+      "encoding": {
+        "x": {
+          "field": "start_yr",
+          "type": "ordinal"
+        },
+        "x2": {
+          "field": "end_yr"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x_pos": "2020–21",
+            "y_pos": 6,
+            "label": "COVID-19 Surge"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 10,
+        "dy": 18,
+        "fontSize": 10,
+        "fontWeight": 600,
+        "fill": "#64748b"
+      },
+      "encoding": {
+        "x": {
+          "field": "x_pos",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y_pos",
+          "type": "ordinal",
+          "sort": "ascending"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
         "url": "data/chart10_bump_age_ranks.csv"
       },
       "params": [
@@ -31,7 +89,8 @@
           "axis": {
             "title": "Financial Year",
             "labelAngle": -35,
-            "labelFontSize": 11
+            "labelFontSize": 11,
+            "grid": false
           }
         },
         "y": {
@@ -40,7 +99,12 @@
           "sort": "ascending",
           "axis": {
             "title": "Demand Rank (1 = Highest Demand)",
-            "labelFontSize": 11
+            "labelFontSize": 11,
+            "gridColor": "#e2e8f0",
+            "gridDash": [
+              3,
+              3
+            ]
           }
         },
         "color": {
@@ -181,7 +245,7 @@
         "align": "center",
         "dy": -14,
         "fontSize": 11,
-        "fontWeight": 600,
+        "fontWeight": 700,
         "fill": "#6b21a8"
       },
       "encoding": {
