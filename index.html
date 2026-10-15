@@ -140,16 +140,16 @@
           </div>
         </div>
 
-        <!-- Chart 6: Multi-Line Channels -->
+        <!-- Chart 6: Proportional Symbol Map -->
         <div class="pure-u-1 pure-u-md-1-2">
           <div class="card">
             <div>
-              <h3 class="card-title">Consultation Modality Evolution (2018–2024)</h3>
-              <div id="vis-line-channels" class="chart-wrapper"></div>
+              <h3 class="card-title">Patient Volume & Severity Across Primary Health Networks</h3>
+              <div id="vis-phn-symbols" class="chart-wrapper"></div>
             </div>
             <p class="narrative-prose">
-              <span class="lead-insight">Telehealth Inflection:</span>
-              Video consultations expanded by 1,800% post-2020, stabilizing into a critical pillar of non-metropolitan service delivery.
+              <span class="lead-insight">Metropolitan Volume:</span>
+              Major urban PHNs carry the highest raw patient volume, while regional and outer hubs record elevated severe disorder concentrations.
             </p>
           </div>
         </div>
@@ -274,6 +274,7 @@
     renderChart('#vis-slope-distress', 'jsons/chart3_slopegraph.vl.json');
     renderChart('#vis-heat-socioeconomic', 'jsons/chart4_heatmap.vl.json');
     renderChart('#vis-map-flow', 'jsons/chart5_parallel_coords.vl.json');
+    renderChart('#vis-phn-symbols', 'jsons/chart6_phn_symbols.vl.json');
     // ...
   </script>
 </body>
