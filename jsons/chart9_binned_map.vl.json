@@ -18,7 +18,7 @@
       ],
       "mark": {
         "type": "geoshape",
-        "fill": "#f1f5f9",
+        "fill": "#f8fafc",
         "stroke": "#cbd5e1",
         "strokeWidth": 1
       }
@@ -27,9 +27,63 @@
       "data": {
         "url": "data/chart9_sa4_binned_map.csv"
       },
+      "transform": [
+        {
+          "bin": {
+            "step": 1.5
+          },
+          "field": "lon",
+          "as": [
+            "lon_bin",
+            "lon_bin_end"
+          ]
+        },
+        {
+          "bin": {
+            "step": 1.5
+          },
+          "field": "lat",
+          "as": [
+            "lat_bin",
+            "lat_bin_end"
+          ]
+        },
+        {
+          "aggregate": [
+            {
+              "op": "mean",
+              "field": "prevalence_pct",
+              "as": "mean_prevalence"
+            },
+            {
+              "op": "sum",
+              "field": "patients_count",
+              "as": "total_patients"
+            },
+            {
+              "op": "count",
+              "as": "region_count"
+            }
+          ],
+          "groupby": [
+            "lon_bin",
+            "lon_bin_end",
+            "lat_bin",
+            "lat_bin_end"
+          ]
+        },
+        {
+          "calculate": "(datum.lon_bin + datum.lon_bin_end) / 2",
+          "as": "center_lon"
+        },
+        {
+          "calculate": "(datum.lat_bin + datum.lat_bin_end) / 2",
+          "as": "center_lat"
+        }
+      ],
       "params": [
         {
-          "name": "sa4_hover",
+          "name": "grid_hover",
           "select": {
             "type": "point",
             "on": "pointerover",
@@ -38,47 +92,46 @@
         }
       ],
       "mark": {
-        "type": "circle"
+        "type": "square",
+        "size": 260
       },
       "encoding": {
         "longitude": {
-          "field": "lon",
+          "field": "center_lon",
           "type": "quantitative"
         },
         "latitude": {
-          "field": "lat",
+          "field": "center_lat",
           "type": "quantitative"
         },
-        "size": {
-          "field": "patients_count",
-          "type": "quantitative",
-          "scale": {
-            "range": [40, 650]
-          },
-          "legend": {
-            "title": "Diagnosed Patients",
-            "format": ",.0f",
-            "orient": "bottom",
-            "direction": "horizontal"
-          }
-        },
         "color": {
-          "field": "prevalence_pct",
+          "field": "mean_prevalence",
           "type": "quantitative",
           "scale": {
-            "scheme": "purples",
-            "domain": [4, 13]
+            "type": "threshold",
+            "domain": [
+              6,
+              8,
+              10,
+              12
+            ],
+            "range": [
+              "#f3e8ff",
+              "#d8b4fe",
+              "#a855f7",
+              "#7e22ce",
+              "#3b0764"
+            ]
           },
           "legend": {
-            "title": "Prevalence (%)",
-            "format": ".1f",
+            "title": "Binned Prevalence Rate (%)",
             "orient": "bottom",
             "direction": "horizontal"
           }
         },
         "stroke": {
           "condition": {
-            "param": "sa4_hover",
+            "param": "grid_hover",
             "empty": false,
             "value": "#0f172a"
           },
@@ -86,42 +139,34 @@
         },
         "strokeWidth": {
           "condition": {
-            "param": "sa4_hover",
+            "param": "grid_hover",
             "empty": false,
             "value": 2.5
           },
-          "value": 0.8
+          "value": 1.2
         },
         "opacity": {
           "condition": {
-            "param": "sa4_hover",
+            "param": "grid_hover",
             "empty": false,
             "value": 1
           },
-          "value": 0.82
+          "value": 0.88
         },
         "tooltip": [
           {
-            "field": "SA4_Name",
-            "type": "nominal",
-            "title": "SA4 Region"
+            "field": "mean_prevalence",
+            "title": "Mean Prevalence (%)",
+            "format": ".2f"
           },
           {
-            "field": "State",
-            "type": "nominal",
-            "title": "State"
-          },
-          {
-            "field": "patients_count",
-            "type": "quantitative",
-            "title": "Diagnosed Patients",
+            "field": "total_patients",
+            "title": "Total Diagnosed Patients",
             "format": ",.0f"
           },
           {
-            "field": "prevalence_pct",
-            "type": "quantitative",
-            "title": "Prevalence (%)",
-            "format": ".2f"
+            "field": "region_count",
+            "title": "SA4 Regions Binned"
           }
         ]
       }
@@ -130,20 +175,20 @@
       "data": {
         "values": [
           {
-            "lon": 143.85,
-            "lat": -37.56,
-            "label": "Ballarat: 12.5% Peak Prevalence"
+            "lon": 144.25,
+            "lat": -37.25,
+            "label": "Central Vic Binned Peak (>12%)"
           }
         ]
       },
       "mark": {
         "type": "text",
         "align": "right",
-        "dx": -14,
+        "dx": -16,
         "dy": -10,
-        "fontSize": 11,
-        "fontWeight": 600,
-        "fill": "#4c1d95"
+        "fontSize": 10.5,
+        "fontWeight": 700,
+        "fill": "#3b0764"
       },
       "encoding": {
         "longitude": {

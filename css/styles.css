@@ -169,6 +169,8 @@ body {
 .token-anxiety { color: #6366f1; }
 .token-affective { color: #f43f5e; }
 .token-substance { color: #0ea5e9; }
+.token-binned-peak { color: #3b0764; }
+.token-binned-high { color: #7e22ce; }
 
 .chart-wrapper {
   width: 100%;

@@ -228,19 +228,22 @@
       </div>
 
       <div class="pure-g">
-        <!-- Chart 9: Spatial Binned Map (SA4 Prevalence) -->
+        <!-- Chart 9: Spatial 2D Binned Map (SA4 Prevalence) -->
         <div class="pure-u-1 pure-u-md-1-2">
           <div class="card">
             <div>
-              <h3 class="card-title">Spatial Distribution of SA4 Diagnostic Prevalence</h3>
+              <h3 class="card-title">Spatial 2D Binned Grid of Regional Diagnostic Prevalence</h3>
               <p class="chart-subtitle">
-                Statistical Area 4 (SA4) diagnostic rates across Australia, highlighting non-metropolitan demand hotspots.
+                Spatial aggregation into 1.5° grid cells. Stepped bins: 
+                <span style="color:#a855f7;font-weight:600;">■ &lt;8%</span>, 
+                <span class="legend-token token-binned-high">■ 8–12%</span>, and 
+                <span class="legend-token token-binned-peak">■ &gt;12% (Peak Cluster)</span>.
               </p>
               <div id="vis-sa4-binned" class="chart-wrapper"></div>
             </div>
             <p class="narrative-prose">
               <span class="lead-insight">Regional Demand Hotspots:</span>
-              Regional hubs exhibit diagnostic rates exceeding 12% in areas like Ballarat (12.5%) and Newcastle (12.2%), contrasting with lower outer-suburban rates.
+              Spatial binning reveals concentrated diagnostic demand exceeding 12% across Central Victoria and the Hunter Valley, contrasting with lower outer-suburban cells.
             </p>
           </div>
         </div>
