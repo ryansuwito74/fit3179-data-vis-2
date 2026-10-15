@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Diagnosed Mental Health Conditions Nearly Tripled Among Young Adults Since 2009",
+    "subtitle": "Percentage point shift in reported long-term mental health conditions by age bracket (2009 vs. 2021)",
+    "anchor": "start"
+  },
+  "width": "container",
+  "height": 350,
+  "data": { "url": "data/chart3_longterm_drift.csv" },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "axis": { "title": "Census Year", "labelAngle": 0, "labelPadding": 10 }
+    },
+    "y": {
+      "field": "prevalence_pct",
+      "type": "quantitative",
+      "axis": { "title": "Prevalence (%)" }
+    },
+    "color": {
+      "field": "age_group",
+      "type": "nominal",
+      "legend": { "title": "Age Cohort", "orient": "right" }
+    }
+  },
+  "layer": [
+    {
+      "mark": { "type": "line", "strokeWidth": 3 }
+    },
+    {
+      "mark": { "type": "point", "filled": true, "size": 80 }
+    },
+    {
+      "transform": [{ "filter": "datum.year == 2021" }],
+      "mark": { "type": "text", "align": "left", "dx": 8, "fontWeight": "bold" },
+      "encoding": {
+        "text": { "field": "prevalence_pct", "type": "quantitative", "format": ".0f" }
+      }
+    }
+  ]
+}

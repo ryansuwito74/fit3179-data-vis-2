@@ -1,0 +1,45 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Social Phobia, PTSD, and Depressive Episodes Dominate Clinical Caseloads",
+    "subtitle": "Estimated population ('000) and prevalence share by broad disorder group and specific diagnosis, 2020–2022",
+    "anchor": "start"
+  },
+  "width": "container",
+  "data": { "url": "data/chart11_treemap_diagnoses.csv" },
+  "facet": {
+    "row": {
+      "field": "disorder_group",
+      "type": "nominal",
+      "header": { "title": "Broad Disorder Group", "labelFontWeight": "bold" }
+    }
+  },
+  "spec": {
+    "height": {"step": 25},
+    "mark": { "type": "bar", "cornerRadiusEnd": 2 },
+    "encoding": {
+      "y": {
+        "field": "specific_diagnosis",
+        "type": "nominal",
+        "sort": "-x",
+        "axis": { "title": null }
+      },
+      "x": {
+        "field": "persons_k",
+        "type": "quantitative",
+        "axis": { "title": "Affected Population ('000)" }
+      },
+      "color": {
+        "field": "disorder_group",
+        "type": "nominal",
+        "legend": null
+      },
+      "tooltip": [
+        { "field": "specific_diagnosis", "title": "Diagnosis" },
+        { "field": "persons_k", "title": "Persons ('000)", "format": ",.1f" },
+        { "field": "proportion_pct", "title": "Prevalence (%)", "format": ".1f" }
+      ]
+    }
+  },
+  "resolve": { "scale": { "y": "independent" } }
+}

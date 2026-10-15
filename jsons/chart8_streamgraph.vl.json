@@ -1,0 +1,36 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Medicare Mental Health Consultations Peaked at 14 Million During the 2020–21 Pandemic Surge",
+    "subtitle": "Annual volume of MBS-subsidised mental health services by provider category (2015–16 to 2024–25)",
+    "anchor": "start"
+  },
+  "width": "container",
+  "height": 300,
+  "data": { "url": "data/chart8_streamgraph_services.csv" },
+  "mark": "area",
+  "encoding": {
+    "x": {
+      "field": "year_date",
+      "type": "temporal",
+      "axis": { "title": "Financial Year", "format": "%Y", "tickCount": 10 }
+    },
+    "y": {
+      "field": "services",
+      "type": "quantitative",
+      "stack": "center",
+      "axis": null
+    },
+    "color": {
+      "field": "provider_type",
+      "type": "nominal",
+      "scale": { "scheme": "tableau10" },
+      "legend": { "title": "Provider Type", "orient": "right" }
+    },
+    "tooltip": [
+      { "field": "financial_year", "type": "nominal", "title": "Year" },
+      { "field": "provider_type", "type": "nominal", "title": "Provider" },
+      { "field": "services", "type": "quantitative", "title": "Consultations", "format": ",.0f" }
+    ]
+  }
+}

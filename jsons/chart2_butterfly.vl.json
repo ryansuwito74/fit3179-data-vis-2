@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Young Women Aged 16–24 Experience Peak Anxiety Rates at 40.4%",
+    "subtitle": "12-month prevalence of anxiety disorders comparing Males vs. Females across age cohorts (%), 2020–2022",
+    "anchor": "start"
+  },
+  "width": "container",
+  "height": 300,
+  "data": { "url": "data/chart2_age_gender_disorders.csv" },
+  "transform": [
+    {
+      "calculate": "datum.sex == 'Female' ? -datum.anxiety_pct : datum.anxiety_pct",
+      "as": "signed_rate"
+    }
+  ],
+  "mark": { "type": "bar", "cornerRadiusEnd": 2 },
+  "encoding": {
+    "y": {
+      "field": "age_group",
+      "type": "ordinal",
+      "axis": { "title": "Age Cohort" },
+      "sort": ["16–24", "25–34", "35–44", "45–54", "55–64", "65–74", "75–85"]
+    },
+    "x": {
+      "field": "signed_rate",
+      "type": "quantitative",
+      "axis": {
+        "title": "Anxiety Prevalence (%)",
+        "format": ".0f",
+        "labelExpr": "abs(datum.value)"
+      }
+    },
+    "color": {
+      "field": "sex",
+      "type": "nominal",
+      "scale": { "range": ["#0d9488", "#d97706"] },
+      "legend": { "title": "Gender", "orient": "top" }
+    },
+    "tooltip": [
+      { "field": "age_group", "type": "nominal", "title": "Age Bracket" },
+      { "field": "sex", "type": "nominal", "title": "Gender" },
+      { "field": "anxiety_pct", "type": "quantitative", "title": "Anxiety Prevalence (%)", "format": ".1f" }
+    ]
+  }
+}

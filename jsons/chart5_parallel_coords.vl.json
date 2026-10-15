@@ -1,0 +1,72 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Queensland Leads Major States Across Active Disorders, Distress, and Suicidal Ideation",
+    "subtitle": "Normalized comparison of 12-month disorders, high distress, suicidal ideation, self-harm, and physical comorbidity (%)",
+    "anchor": "start"
+  },
+  "width": "container",
+  "height": 320,
+  "data": { "url": "data/chart5_parallel_coords.csv" },
+  "transform": [
+    {
+      "fold": [
+        "Active 12m Disorder (%)",
+        "High/Very High Distress (%)",
+        "Lifetime Suicidal Ideation (%)",
+        "Lifetime Self-Harm (%)",
+        "Physical Comorbidity (%)"
+      ],
+      "as": ["metric", "raw_value"]
+    },
+    {
+      "joinaggregate": [
+        { "op": "min", "field": "raw_value", "as": "min_val" },
+        { "op": "max", "field": "raw_value", "as": "max_val" }
+      ],
+      "groupby": ["metric"]
+    },
+    {
+      "calculate": "(datum.raw_value - datum.min_val) / (datum.max_val - datum.min_val)",
+      "as": "norm_value"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "metric",
+      "type": "nominal",
+      "axis": { "title": null, "labelAngle": -15, "labelFontWeight": 600, "orient": "bottom" }
+    },
+    "y": {
+      "field": "norm_value",
+      "type": "quantitative",
+      "axis": null
+    },
+    "color": {
+      "field": "State",
+      "type": "nominal",
+      "scale": { "scheme": "category10" },
+      "legend": { "title": "State", "orient": "top" }
+    }
+  },
+  "layer": [
+    {
+      "mark": { "type": "rule", "color": "#cbd5e1", "strokeWidth": 2 },
+      "encoding": { "x": { "field": "metric", "type": "nominal" }, "y": { "value": 0 }, "y2": { "value": 320 }, "color": null }
+    },
+    {
+      "mark": { "type": "line", "strokeWidth": 3, "opacity": 0.85 },
+      "encoding": { "detail": { "field": "State", "type": "nominal" } }
+    },
+    {
+      "mark": { "type": "point", "filled": true, "size": 90 },
+      "encoding": {
+        "tooltip": [
+          { "field": "State", "type": "nominal" },
+          { "field": "metric", "type": "nominal" },
+          { "field": "raw_value", "type": "quantitative", "title": "Actual %", "format": ".1f" }
+        ]
+      }
+    }
+  ]
+}

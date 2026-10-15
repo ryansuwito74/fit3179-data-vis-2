@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Northern Territory and ACT Record Highest 12-Month Disorder Rates",
+    "subtitle": "Proportion of persons aged 16–85 with an active 12-month mental disorder by state/territory (%), 2020–2022",
+    "anchor": "start"
+  },
+  "width": "container",
+  "height": 400,
+  "data": {
+    "url": "data/maps/aus_states.topojson",
+    "format": { "type": "topojson", "feature": "STE_2021_AUST_GDA2020" }
+  },
+  "transform": [
+    {
+      "lookup": "properties.STE_NAME21",
+      "from": {
+        "data": { "url": "data/chart1_state_prevalence.csv" },
+        "key": "State",
+        "fields": ["Any_12m_Disorder_Pct", "Abbrev"]
+      }
+    }
+  ],
+  "projection": { "type": "equirectangular" },
+  "mark": { "type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1 },
+  "encoding": {
+    "color": {
+      "field": "Any_12m_Disorder_Pct",
+      "type": "quantitative",
+      "scale": { "scheme": "teals" },
+      "legend": { "title": "Disorder Rate (%)", "orient": "right" }
+    },
+    "tooltip": [
+      { "field": "properties.STE_NAME21", "type": "nominal", "title": "State" },
+      { "field": "Any_12m_Disorder_Pct", "type": "quantitative", "title": "Prevalence (%)", "format": ".1f" }
+    ]
+  }
+}
