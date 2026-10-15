@@ -154,16 +154,16 @@
           </div>
         </div>
 
-        <!-- Chart 7: Dumbbell Wait Times -->
+        <!-- Chart 7: Dumbbell Plot (Gender Provider Uptake Gap) -->
         <div class="pure-u-1 pure-u-md-1-2">
           <div class="card">
             <div>
-              <h3 class="card-title">Specialist Wait Times: Metro vs Regional</h3>
+              <h3 class="card-title">Medicare Service Uptake by Provider & Gender</h3>
               <div id="vis-dumbbell-waits" class="chart-wrapper"></div>
             </div>
             <p class="narrative-prose">
-              <span class="lead-insight">The 12-Week Penalty:</span>
-              Regional residents face an average 12-week additional delay compared to city residents when seeking clinical psychology intakes.
+              <span class="lead-insight">The Gender Service Gap:</span>
+              Women access clinical psychology and GP mental health plans at nearly double the rate of men, with service uptake gaps exceeding 70 visits per 1,000 residents across primary care providers.
             </p>
           </div>
         </div>
@@ -275,6 +275,7 @@
     renderChart('#vis-heat-socioeconomic', 'jsons/chart4_heatmap.vl.json');
     renderChart('#vis-map-flow', 'jsons/chart5_parallel_coords.vl.json');
     renderChart('#vis-phn-symbols', 'jsons/chart6_phn_symbols.vl.json');
+    renderChart('#vis-dumbbell-waits', 'jsons/chart7_dumbbell_gender.vl.json');
     // ...
   </script>
 </body>

@@ -1,33 +1,46 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 220,
+  "height": 300,
   "data": {
-    "url": "data/chart7_mbs_shifts.csv"
+    "url": "data/chart7_dumbbell_provider_gap.csv"
   },
   "encoding": {
     "y": {
       "field": "provider_type",
       "type": "nominal",
       "axis": {
-        "title": "Provider Category",
-        "labelLimit": 200
-      }
+        "title": null,
+        "labelLimit": 220,
+        "labelFontWeight": 600
+      },
+      "sort": [
+        "General practitioners",
+        "Other psychologists",
+        "Clinical psychologists",
+        "Psychiatrists",
+        "Other allied health providers"
+      ]
     }
   },
   "layer": [
     {
       "mark": {
         "type": "rule",
-        "color": "#cbd5e1",
-        "size": 4
+        "color": "#e2e8f0",
+        "strokeWidth": 6,
+        "strokeCap": "round"
       },
       "encoding": {
         "x": {
           "field": "male_rate_per_1k",
           "type": "quantitative",
+          "scale": {
+            "domain": [0, 185]
+          },
           "axis": {
-            "title": "Service Rate per 1,000 Population"
+            "title": "MBS Consultations per 1,000 Population",
+            "format": ".0f"
           }
         },
         "x2": {
@@ -36,55 +49,108 @@
       }
     },
     {
+      "transform": [
+        {
+          "fold": [
+            "female_rate_per_1k",
+            "male_rate_per_1k"
+          ],
+          "as": [
+            "raw_gender",
+            "rate"
+          ]
+        },
+        {
+          "calculate": "datum.raw_gender == 'female_rate_per_1k' ? 'Female' : 'Male'",
+          "as": "Gender"
+        }
+      ],
+      "params": [
+        {
+          "name": "gender_hover",
+          "select": {
+            "type": "point",
+            "fields": ["Gender"],
+            "on": "pointerover",
+            "clear": "pointerout"
+          }
+        }
+      ],
       "mark": {
         "type": "point",
         "filled": true,
-        "size": 140
+        "size": 160
       },
       "encoding": {
         "x": {
-          "field": "male_rate_per_1k",
+          "field": "rate",
           "type": "quantitative"
         },
         "color": {
-          "value": "#0d9488"
+          "field": "Gender",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Female", "Male"],
+            "range": ["#e11d48", "#0d9488"]
+          },
+          "legend": {
+            "title": "Gender",
+            "orient": "top",
+            "direction": "horizontal"
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "gender_hover",
+            "value": 1
+          },
+          "value": 0.35
         },
         "tooltip": [
           {
             "field": "provider_type",
-            "title": "Provider"
+            "type": "nominal",
+            "title": "Provider Category"
           },
           {
-            "field": "male_rate_per_1k",
-            "title": "Male Rate (per 1k)"
+            "field": "Gender",
+            "type": "nominal",
+            "title": "Gender"
+          },
+          {
+            "field": "rate",
+            "type": "quantitative",
+            "title": "Consultations / 1k",
+            "format": ".0f"
+          },
+          {
+            "field": "gender_gap_per_1k",
+            "type": "quantitative",
+            "title": "Gender Gap / 1k",
+            "format": "+.0f"
           }
         ]
       }
     },
     {
       "mark": {
-        "type": "point",
-        "filled": true,
-        "size": 140
+        "type": "text",
+        "align": "left",
+        "dx": 12,
+        "fontSize": 11,
+        "fontWeight": 600,
+        "color": "#475569"
       },
       "encoding": {
         "x": {
           "field": "female_rate_per_1k",
           "type": "quantitative"
         },
-        "color": {
-          "value": "#e11d48"
-        },
-        "tooltip": [
-          {
-            "field": "provider_type",
-            "title": "Provider"
-          },
-          {
-            "field": "female_rate_per_1k",
-            "title": "Female Rate (per 1k)"
-          }
-        ]
+        "text": {
+          "field": "gender_gap_per_1k",
+          "type": "quantitative",
+          "format": "+.0f"
+        }
       }
     }
   ]
