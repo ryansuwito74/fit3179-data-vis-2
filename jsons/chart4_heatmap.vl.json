@@ -8,12 +8,6 @@
   "width": "container",
   "height": 280,
   "data": { "url": "data/chart4_age_distress.csv" },
-  "params": [
-    {
-      "name": "cell_hover",
-      "select": { "type": "point", "on": "pointerover", "clear": "pointerout" }
-    }
-  ],
   "encoding": {
     "x": {
       "field": "age_group",
@@ -30,6 +24,12 @@
   },
   "layer": [
     {
+      "params": [
+        {
+          "name": "cell_hover",
+          "select": { "type": "point", "on": "pointerover", "clear": "pointerout" }
+        }
+      ],
       "mark": { "type": "rect" },
       "encoding": {
         "color": {

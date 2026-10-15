@@ -126,16 +126,16 @@
       </div>
 
       <div class="pure-g">
-        <!-- Chart 5: Flow / Route Map -->
+        <!-- Chart 5: Parallel Coordinates Plot -->
         <div class="pure-u-1 pure-u-md-1-2">
           <div class="card">
             <div>
-              <h3 class="card-title">Regional Transit to Metropolitan Care</h3>
+              <h3 class="card-title">Multi-Dimensional Clinical Profile by State</h3>
               <div id="vis-map-flow" class="chart-wrapper"></div>
             </div>
             <p class="narrative-prose">
-              <span class="lead-insight">Transit Corridors:</span>
-              Patients from remote zones travel hundreds of kilometers toward capital nodes to access inpatient sub-specialty psychiatric wards.
+              <span class="lead-insight">Multi-Axis Burden:</span>
+              Queensland records the highest concurrent rates of active 12-month disorders (23.7%), severe distress (18.9%), and lifetime suicidal ideation (21.1%) among major states.
             </p>
           </div>
         </div>
@@ -273,6 +273,7 @@
     renderChart('#vis-pyramid-anxiety', 'jsons/chart2_butterfly.vl.json');
     renderChart('#vis-slope-distress', 'jsons/chart3_slopegraph.vl.json');
     renderChart('#vis-heat-socioeconomic', 'jsons/chart4_heatmap.vl.json');
+    renderChart('#vis-map-flow', 'jsons/chart5_parallel_coords.vl.json');
     // ...
   </script>
 </body>

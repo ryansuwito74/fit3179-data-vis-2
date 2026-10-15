@@ -66,7 +66,9 @@
         "type": "text",
         "fontSize": 11,
         "fontWeight": 500,
-        "fill": "#475569"
+        "fill": "#475569",
+        "align": { "expr": "datum.sex == 'Female' ? 'right' : 'left'" },
+        "dx": { "expr": "datum.sex == 'Female' ? -6 : 6" }
       },
       "encoding": {
         "y": {
@@ -82,14 +84,6 @@
           "field": "anxiety_pct",
           "type": "quantitative",
           "format": ".1f"
-        },
-        "align": {
-          "condition": { "test": "datum.sex == 'Female'", "value": "right" },
-          "value": "left"
-        },
-        "dx": {
-          "condition": { "test": "datum.sex == 'Female'", "value": -6 },
-          "value": 6
         }
       }
     }

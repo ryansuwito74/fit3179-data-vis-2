@@ -8,12 +8,6 @@
   "width": "container",
   "height": 340,
   "data": { "url": "data/chart3_slopegraph_shift.csv" },
-  "params": [
-    {
-      "name": "hover_cohort",
-      "select": { "type": "point", "fields": ["age_group"], "on": "pointerover", "clear": "pointerout" }
-    }
-  ],
   "encoding": {
     "x": {
       "field": "year",
@@ -63,6 +57,12 @@
       }
     },
     {
+      "params": [
+        {
+          "name": "hover_cohort",
+          "select": { "type": "point", "fields": ["age_group"], "on": "pointerover", "clear": "pointerout" }
+        }
+      ],
       "mark": { "type": "point", "filled": true },
       "encoding": {
         "size": {
