@@ -1,50 +1,201 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 320,
-  "data": {
-    "url": "data/chart10_bump_ranks.csv"
-  },
-  "encoding": {
-    "x": {
-      "field": "financial_year",
-      "type": "ordinal",
-      "axis": {
-        "title": "Financial Year",
-        "labelAngle": -45
-      }
-    },
-    "y": {
-      "field": "rank",
-      "type": "ordinal",
-      "axis": {
-        "title": "Demand Rank (1 = Highest)"
-      }
-    },
-    "color": {
-      "field": "age_group",
-      "type": "nominal",
-      "scale": {
-        "scheme": "set2"
-      },
-      "legend": {
-        "title": "Age Cohort",
-        "orient": "bottom"
-      }
-    }
-  },
+  "height": 360,
   "layer": [
     {
+      "data": {
+        "url": "data/chart10_bump_age_ranks.csv"
+      },
+      "params": [
+        {
+          "name": "cohort_hover",
+          "select": {
+            "type": "point",
+            "fields": [
+              "age_group"
+            ],
+            "on": "pointerover",
+            "clear": "pointerout"
+          }
+        }
+      ],
       "mark": {
         "type": "line",
-        "strokeWidth": 4
+        "interpolate": "monotone"
+      },
+      "encoding": {
+        "x": {
+          "field": "financial_year",
+          "type": "ordinal",
+          "axis": {
+            "title": "Financial Year",
+            "labelAngle": -35,
+            "labelFontSize": 11
+          }
+        },
+        "y": {
+          "field": "rank",
+          "type": "ordinal",
+          "sort": "ascending",
+          "axis": {
+            "title": "Demand Rank (1 = Highest Demand)",
+            "labelFontSize": 11
+          }
+        },
+        "color": {
+          "field": "age_group",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "12–17 years",
+              "18–24 years",
+              "25–34 years",
+              "35–44 years",
+              "45–54 years",
+              "55–64 years"
+            ],
+            "range": [
+              "#ec4899",
+              "#8b5cf6",
+              "#06b6d4",
+              "#f59e0b",
+              "#10b981",
+              "#64748b"
+            ]
+          },
+          "legend": {
+            "title": "Age Cohort",
+            "orient": "bottom",
+            "direction": "horizontal"
+          }
+        },
+        "strokeWidth": {
+          "condition": {
+            "param": "cohort_hover",
+            "empty": false,
+            "value": 4.5
+          },
+          "value": 2.5
+        },
+        "opacity": {
+          "condition": {
+            "param": "cohort_hover",
+            "empty": false,
+            "value": 1
+          },
+          "value": 0.82
+        }
       }
     },
     {
+      "data": {
+        "url": "data/chart10_bump_age_ranks.csv"
+      },
       "mark": {
         "type": "point",
-        "filled": true,
-        "size": 100
+        "filled": true
+      },
+      "encoding": {
+        "x": {
+          "field": "financial_year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "rank",
+          "type": "ordinal",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "age_group",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "12–17 years",
+              "18–24 years",
+              "25–34 years",
+              "35–44 years",
+              "45–54 years",
+              "55–64 years"
+            ],
+            "range": [
+              "#ec4899",
+              "#8b5cf6",
+              "#06b6d4",
+              "#f59e0b",
+              "#10b981",
+              "#64748b"
+            ]
+          }
+        },
+        "size": {
+          "condition": {
+            "param": "cohort_hover",
+            "empty": false,
+            "value": 120
+          },
+          "value": 65
+        },
+        "opacity": {
+          "condition": {
+            "param": "cohort_hover",
+            "empty": false,
+            "value": 1
+          },
+          "value": 0.9
+        },
+        "tooltip": [
+          {
+            "field": "financial_year",
+            "title": "Financial Year"
+          },
+          {
+            "field": "age_group",
+            "title": "Age Cohort"
+          },
+          {
+            "field": "rank",
+            "title": "Demand Rank"
+          },
+          {
+            "field": "service_rate_per_1k",
+            "title": "Services per 1k Pop",
+            "format": ",.0f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "financial_year": "2021–22",
+            "rank": 1,
+            "label": "Youth Peak: 910 / 1k pop"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "dy": -14,
+        "fontSize": 11,
+        "fontWeight": 600,
+        "fill": "#6b21a8"
+      },
+      "encoding": {
+        "x": {
+          "field": "financial_year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "rank",
+          "type": "ordinal",
+          "sort": "ascending"
+        },
+        "text": {
+          "field": "label"
+        }
       }
     }
   ]
