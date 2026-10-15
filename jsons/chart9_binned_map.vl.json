@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 450,
+  "height": 360,
   "layer": [
     {
       "data": {
@@ -18,17 +18,27 @@
       ],
       "mark": {
         "type": "geoshape",
-        "fill": "#f8fafc",
-        "stroke": "#cbd5e1"
+        "fill": "#f1f5f9",
+        "stroke": "#cbd5e1",
+        "strokeWidth": 1
       }
     },
     {
       "data": {
         "url": "data/chart9_sa4_binned_map.csv"
       },
+      "params": [
+        {
+          "name": "sa4_hover",
+          "select": {
+            "type": "point",
+            "on": "pointerover",
+            "clear": "pointerout"
+          }
+        }
+      ],
       "mark": {
-        "type": "circle",
-        "opacity": 0.8
+        "type": "circle"
       },
       "encoding": {
         "longitude": {
@@ -43,24 +53,48 @@
           "field": "patients_count",
           "type": "quantitative",
           "scale": {
-            "range": [
-              30,
-              600
-            ]
+            "range": [40, 650]
           },
           "legend": {
-            "title": "Total Patients"
+            "title": "Diagnosed Patients",
+            "format": ",.0f"
           }
         },
         "color": {
           "field": "prevalence_pct",
           "type": "quantitative",
           "scale": {
-            "scheme": "purples"
+            "scheme": "purples",
+            "domain": [4, 13]
           },
           "legend": {
-            "title": "Prevalence (%)"
+            "title": "Prevalence (%)",
+            "format": ".1f"
           }
+        },
+        "stroke": {
+          "condition": {
+            "param": "sa4_hover",
+            "empty": false,
+            "value": "#0f172a"
+          },
+          "value": "#ffffff"
+        },
+        "strokeWidth": {
+          "condition": {
+            "param": "sa4_hover",
+            "empty": false,
+            "value": 2.5
+          },
+          "value": 0.8
+        },
+        "opacity": {
+          "condition": {
+            "param": "sa4_hover",
+            "empty": false,
+            "value": 1
+          },
+          "value": 0.82
         },
         "tooltip": [
           {
@@ -69,9 +103,14 @@
             "title": "SA4 Region"
           },
           {
+            "field": "State",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
             "field": "patients_count",
             "type": "quantitative",
-            "title": "Patients",
+            "title": "Diagnosed Patients",
             "format": ",.0f"
           },
           {
@@ -81,6 +120,40 @@
             "format": ".2f"
           }
         ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 143.85,
+            "lat": -37.56,
+            "label": "Ballarat: 12.5% Peak Prevalence"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -14,
+        "dy": -10,
+        "fontSize": 11,
+        "fontWeight": 600,
+        "fill": "#4c1d95"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
       }
     }
   ]

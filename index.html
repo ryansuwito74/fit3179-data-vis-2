@@ -185,6 +185,7 @@
     </section>
 
     <!-- SECTION 4: SYSTEM CAPACITY & TREATMENT ATTRITION -->
+    <!-- SECTION 4: SYSTEM CAPACITY & TREATMENT ATTRITION -->
     <section class="section-block">
       <div class="section-header">
         <span class="section-number">Section 04</span>
@@ -192,44 +193,58 @@
       </div>
 
       <div class="pure-g">
-        <!-- Chart 9: Bump Chart -->
+        <!-- Chart 9: Spatial Binned Map (SA4 Prevalence) -->
         <div class="pure-u-1 pure-u-md-1-2">
           <div class="card">
             <div>
-              <h3 class="card-title">Rank Dynamics of Crisis Hotline Triggers</h3>
-              <div id="vis-bump-crisis" class="chart-wrapper"></div>
+              <h3 class="card-title">Spatial Distribution of SA4 Diagnostic Prevalence</h3>
+              <div id="vis-sa4-binned" class="chart-wrapper"></div>
             </div>
             <p class="narrative-prose">
-              <span class="lead-insight">Economic Stressors:</span>
-              Cost-of-living and housing insecurity rapidly climbed into the primary ranks of crisis hotline support intake reasons.
+              <span class="lead-insight">Regional Concentration:</span>
+              Regional hubs exhibit heightened diagnostic rates exceeding 12% in areas like Ballarat (12.5%) and Newcastle (12.2%), contrasting with sub-6% rates across outer metropolitan corridors.
             </p>
           </div>
         </div>
 
-        <!-- Chart 10: Bullet Graph -->
+        <!-- Chart 10: Bump Chart (Demand Ranks by Age Cohort) -->
         <div class="pure-u-1 pure-u-md-1-2">
           <div class="card">
             <div>
-              <h3 class="card-title">Workforce Density Against National Benchmarks</h3>
-              <div id="vis-bullet-workforce" class="chart-wrapper"></div>
+              <h3 class="card-title">Demand Rank Shifts Across Age Cohorts</h3>
+              <div id="vis-bump-ranks" class="chart-wrapper"></div>
             </div>
             <p class="narrative-prose">
-              <span class="lead-insight">Staffing Deficits:</span>
-              Active psychiatric practitioners fall 27% short of target staffing levels, bottlenecking early clinical intervention.
+              <span class="lead-insight">Cohort Trajectories:</span>
+              Young adults aged 15–24 persistently dominate primary consultation demand ranks, while middle-age cohort ranks have stabilized following pandemic spikes.
             </p>
           </div>
         </div>
 
-        <!-- Chart 11: Care Plan Attrition (Added to guarantee HD threshold) -->
-        <div class="pure-u-1">
+        <!-- Chart 11: Faceted Bar (Disorder Breakdown) -->
+        <div class="pure-u-1 pure-u-md-1-2">
           <div class="card">
             <div>
-              <h3 class="card-title">Mental Health Treatment Plan Attrition Rate</h3>
-              <div id="vis-step-funnel" class="chart-wrapper"></div>
+              <h3 class="card-title">Clinical Diagnoses Breakdown by Disorder Category</h3>
+              <div id="vis-faceted-diagnoses" class="chart-wrapper"></div>
             </div>
-            <p class="narrative-prose" style="max-width: 80ch;">
-              <span class="lead-insight">Financial Drop-off:</span>
-              Nearly 40% of patients with an approved GP Mental Health Care Plan do not complete their allocated psychology sessions, primarily citing steep out-of-pocket gap fees.
+            <p class="narrative-prose">
+              <span class="lead-insight">Diagnostic Composition:</span>
+              Anxiety conditions represent the largest single diagnostic class, led by social phobia and generalized anxiety, followed closely by depressive episodes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Chart 12: Bullet Graph (State Prevalence vs National Benchmark) -->
+        <div class="pure-u-1 pure-u-md-1-2">
+          <div class="card">
+            <div>
+              <h3 class="card-title">State Prevalence Against National Benchmarks</h3>
+              <div id="vis-bullet-benchmark" class="chart-wrapper"></div>
+            </div>
+            <p class="narrative-prose">
+              <span class="lead-insight">Target Variance:</span>
+              Tasmania and Queensland exceed the national threshold benchmark for high-distress prevalence, while Victoria and New South Wales track closely along moderate bands.
             </p>
           </div>
         </div>
@@ -277,6 +292,8 @@
     renderChart('#vis-phn-symbols', 'jsons/chart6_phn_symbols.vl.json');
     renderChart('#vis-dumbbell-waits', 'jsons/chart7_dumbbell_gender.vl.json');
     renderChart('#vis-stream-modalities', 'jsons/chart8_streamgraph.vl.json');
+    renderChart('#vis-sa4-binned', 'jsons/chart9_binned_map.vl.json');
+
     // ...
   </script>
 </body>
