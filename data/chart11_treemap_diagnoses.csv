@@ -1,0 +1,12 @@
+disorder_group,specific_diagnosis,males_k,females_k,persons_k,proportion_pct
+Anxiety Disorders,Social Phobia,147.8,250.9,401.8,6.4
+Anxiety Disorders,Post-Traumatic Stress Disorder,100,194.7,295.8,4.7
+Anxiety Disorders,Agoraphobia,93.2,150,243.7,3.9
+Anxiety Disorders,Obsessive-Compulsive Disorder,99.9,110.5,216.5,3.5
+Anxiety Disorders,Panic Disorder,73.4,138.1,208.8,3.3
+Anxiety Disorders,Generalised Anxiety Disorder,76.2,94.4,169.3,2.7
+Affective Disorders,Depressive Episode,139.6,132.3,271.3,4.3
+Affective Disorders,Bipolar Affective Disorder,50.7,48.6,103.6,1.7
+Affective Disorders,Dysthymia,39.5,55.5,95.4,1.5
+Substance Use Disorders,Alcohol Use Disorders,96.4,62.9,155.1,2.5
+Substance Use Disorders,Drug Use Disorders,37,6.3,47.9,0.8

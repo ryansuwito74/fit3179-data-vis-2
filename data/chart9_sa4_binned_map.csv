@@ -1,0 +1,51 @@
+SA4_Code,SA4_Name,State,lat,lon,patients_count,prevalence_pct
+101,Capital Region,NSW,-35.6,149.6,23847,9.99
+102,Central Coast,NSW,-33.32,151.34,37984,10.96
+103,Central West,NSW,-33.28,148.6,21859,10.26
+104,Coffs Harbour - Grafton,NSW,-30.1,153.05,16022,10.96
+106,Hunter Valley exc Newcastle,NSW,-32.65,151.15,34767,11.91
+107,Illawarra,NSW,-34.48,150.85,31725,10.11
+108,Mid North Coast,NSW,-31.43,152.75,26154,11.42
+111,Newcastle and Lake Macquarie,NSW,-32.98,151.68,47681,12.21
+112,Richmond - Tweed,NSW,-28.75,153.35,25565,9.95
+114,Southern Highlands and Shoalhaven,NSW,-34.9,150.5,16796,10.43
+115,Sydney - Baulkham Hills and Hawkesbury,NSW,-33.62,150.92,14282,5.4
+116,Sydney - Blacktown,NSW,-33.75,150.86,23835,5.94
+117,Sydney - City and Inner South,NSW,-33.9,151.2,28753,8.68
+118,Sydney - Eastern Suburbs,NSW,-33.91,151.25,16001,6.12
+119,Sydney - Inner South West,NSW,-33.95,151.07,30363,5.02
+120,Sydney - Inner West,NSW,-33.88,151.12,20635,6.77
+122,Sydney - Northern Beaches,NSW,-33.72,151.28,16421,6.23
+124,Sydney - Outer West and Blue Mountains,NSW,-33.72,150.55,32225,9.7
+125,Sydney - Parramatta,NSW,-33.81,151,23507,4.76
+127,Sydney - South West,NSW,-33.98,150.88,23971,5.05
+201,Ballarat,VIC,-37.56,143.85,21746,12.5
+202,Bendigo,VIC,-36.75,144.28,20292,12.1
+203,Geelong,VIC,-38.15,144.36,34722,10.59
+204,Hume,VIC,-36.5,146.2,19857,10.74
+205,Latrobe - Gippsland,VIC,-38.12,146.85,32993,10.97
+206,Melbourne - Inner,VIC,-37.81,144.96,63732,10.33
+207,Melbourne - Inner East,VIC,-37.84,145.08,25372,6.79
+208,Melbourne - Inner South,VIC,-37.92,145.02,32870,7.78
+209,Melbourne - North East,VIC,-37.68,145.1,45732,8.46
+210,Melbourne - North West,VIC,-37.68,144.82,31434,7.41
+211,Melbourne - Outer East,VIC,-37.82,145.32,47313,9.13
+212,Melbourne - South East,VIC,-38.02,145.25,59821,6.96
+213,Melbourne - West,VIC,-37.8,144.75,59330,6.96
+214,Mornington Peninsula,VIC,-38.28,145.12,32659,10.6
+301,Brisbane - East,QLD,-27.52,153.18,23939,9.98
+302,Brisbane - North,QLD,-27.38,153.04,22600,10.06
+303,Brisbane - South,QLD,-27.56,153.03,30360,8.18
+304,Brisbane - West,QLD,-27.48,152.94,17247,9.12
+305,Brisbane Inner City,QLD,-27.47,153.02,28665,9.81
+309,Gold Coast,QLD,-28.02,153.4,53788,8.39
+316,Sunshine Coast,QLD,-26.65,153.06,36705,9.2
+401,Adelaide - Central and Hills,SA,-34.95,138.7,26509,8.49
+402,Adelaide - North,SA,-34.75,138.65,47525,10.43
+403,Adelaide - South,SA,-35.12,138.55,39028,10.41
+503,Perth - Inner,WA,-31.95,115.86,14756,8.1
+504,Perth - North East,WA,-31.85,115.98,24430,8.83
+505,Perth - North West,WA,-31.78,115.78,46109,7.99
+506,Perth - South East,WA,-32.05,115.95,41476,7.83
+507,Perth - South West,WA,-32.18,115.82,39642,8.94
+602,Hobart,TAS,-42.88,147.33,17041,11.27
