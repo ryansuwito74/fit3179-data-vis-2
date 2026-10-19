@@ -76,10 +76,10 @@
           "Very High"
         ],
         "range": [
-          "#94a3b8",
+          "#cbd5e1",
+          "#7dd3fc",
           "#38bdf8",
-          "#f59e0b",
-          "#e11d48"
+          "#0369a1"
         ]
       },
       "legend": {

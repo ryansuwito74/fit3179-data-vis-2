@@ -161,14 +161,12 @@ body {
 
 .token-female-teal { color: #0d9488; }
 .token-male-amber { color: #d97706; }
-.token-female-rose { color: #e11d48; }
-.token-male-teal { color: #0d9488; }
-.token-youth-red { color: #e11d48; }
-.token-benchmark-red { color: #e11d48; }
-.token-qld-red { color: #e11d48; }
-.token-anxiety { color: #6366f1; }
-.token-affective { color: #f43f5e; }
-.token-substance { color: #0ea5e9; }
+.token-youth-fuchsia { color: #db2777; }
+.token-benchmark-violet { color: #7c3aed; }
+.token-qld-bronze { color: #b45309; }
+.token-anxiety { color: #4f46e5; }
+.token-affective { color: #c2410c; }
+.token-substance { color: #0284c7; }
 .token-binned-peak { color: #3b0764; }
 .token-binned-high { color: #7e22ce; }
 

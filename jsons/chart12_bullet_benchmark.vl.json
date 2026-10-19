@@ -164,7 +164,7 @@
     {
       "mark": {
         "type": "tick",
-        "color": "#e11d48",
+        "color": "#7c3aed",
         "thickness": 3.5,
         "size": 24
       },
@@ -198,7 +198,7 @@
         "dy": -18,
         "fontSize": 10.5,
         "fontWeight": 600,
-        "fill": "#be123c"
+        "fill": "#7c3aed"
       },
       "encoding": {
         "x": {

@@ -45,7 +45,7 @@ const customTheme = {
 
   range: {
     // Categorical palette: deep teal, warm amber, muted slate, rose coral
-    category: ["#0d9488", "#d97706", "#64748b", "#e11d48", "#6366f1", "#0891b2"],
+    category: ["#0d9488", "#d97706", "#64748b", "#db2777", "#4f46e5", "#0284c7"],
     // Sequential ramp for heatmaps and choropleths
     heatmap: ["#f8fafc", "#ccfbf1", "#5eead4", "#14b8a6", "#0f766e", "#115e59"]
   },
