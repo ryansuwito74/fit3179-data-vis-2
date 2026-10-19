@@ -42,7 +42,8 @@
             ],
             "on": "pointerover",
             "clear": "pointerout"
-          }
+          },
+          "bind": "legend"
         }
       ],
       "mark": {
@@ -63,8 +64,16 @@
         "y": {
           "field": "services",
           "type": "quantitative",
-          "stack": "center",
-          "axis": null
+          "stack": "zero",
+          "scale": {
+            "domain": [0, 16000000]
+          },
+          "axis": {
+            "title": "Annual Consultations",
+            "format": "~s",
+            "grid": true,
+            "gridColor": "#f1f5f9"
+          }
         },
         "color": {
           "field": "provider_type",
@@ -78,10 +87,10 @@
               "Other allied health providers"
             ],
             "range": [
-              "#0d9488",
-              "#d97706",
-              "#e11d48",
-              "#6366f1",
+              "#0072b2",
+              "#e69f00",
+              "#56b4e9",
+              "#cc79a7",
               "#64748b"
             ]
           },
@@ -97,7 +106,7 @@
             "param": "stream_hover",
             "value": 1
           },
-          "value": 0.4
+          "value": 0.35
         },
         "tooltip": [
           {
@@ -121,6 +130,37 @@
         "values": [
           {
             "peak_dt": "2021-01-01",
+            "y_pos": 14000000,
+            "y_top": 14750000
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeDash": [3, 3],
+        "color": "#94a3b8",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "peak_dt",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "y_pos",
+          "type": "quantitative"
+        },
+        "y2": {
+          "field": "y_top"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "peak_dt": "2021-01-01",
+            "y_top": 15000000,
             "label": "Pandemic Surge (14.0M Total Sessions)"
           }
         ]
@@ -128,8 +168,7 @@
       "mark": {
         "type": "text",
         "align": "center",
-        "baseline": "top",
-        "dy": -135,
+        "baseline": "bottom",
         "fontSize": 10.5,
         "fontWeight": 700,
         "fill": "#0f172a"
@@ -138,6 +177,10 @@
         "x": {
           "field": "peak_dt",
           "type": "temporal"
+        },
+        "y": {
+          "field": "y_top",
+          "type": "quantitative"
         },
         "text": {
           "field": "label"
