@@ -58,8 +58,8 @@
           "#8b5cf6",
           "#0284c7",
           "#475569",
-          "#94a3b8",
-          "#cbd5e1"
+          "#57534e",
+          "#78716c"
         ]
       },
       "legend": {
@@ -197,6 +197,19 @@
         "fill": "#0f172a"
       },
       "encoding": {
+        "yOffset": {
+          "condition": [
+            {
+              "test": "datum.age_group === '15–17'",
+              "value": -8
+            },
+            {
+              "test": "datum.age_group === '55–64'",
+              "value": 8
+            }
+          ],
+          "value": 0
+        },
         "text": {
           "field": "label_text",
           "type": "nominal"
