@@ -18,9 +18,9 @@
       ],
       "mark": {
         "type": "geoshape",
-        "fill": "#f8fafc",
-        "stroke": "#cbd5e1",
-        "strokeWidth": 1
+        "fill": "#f1f5f9",
+        "stroke": "#94a3b8",
+        "strokeWidth": 0.9
       }
     },
     {
@@ -116,8 +116,8 @@
               12
             ],
             "range": [
-              "#f3e8ff",
               "#d8b4fe",
+              "#c084fc",
               "#a855f7",
               "#7e22ce",
               "#3b0764"
@@ -151,7 +151,7 @@
             "empty": false,
             "value": 1
           },
-          "value": 0.88
+          "value": 0.95
         },
         "tooltip": [
           {
