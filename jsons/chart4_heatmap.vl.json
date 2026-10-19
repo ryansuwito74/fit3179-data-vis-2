@@ -5,6 +5,23 @@
   "data": {
     "url": "data/chart4_age_distress.csv"
   },
+  "params": [
+    {
+      "name": "distress_hover",
+      "select": {
+        "type": "point",
+        "fields": ["distress_level"],
+        "on": "pointerover",
+        "clear": "pointerout"
+      },
+      "bind": "legend"
+    }
+  ],
+  "mark": {
+    "type": "bar",
+    "cornerRadiusTopLeft": 3,
+    "cornerRadiusTopRight": 3
+  },
   "encoding": {
     "x": {
       "field": "age_group",
@@ -23,121 +40,84 @@
         "labelAngle": 0,
         "labelFontSize": 11,
         "titleFontSize": 12,
-        "grid": false,
-        "domain": false,
-        "ticks": false
+        "grid": false
       }
+    },
+    "xOffset": {
+      "field": "distress_level",
+      "sort": [
+        "Low",
+        "Moderate",
+        "High",
+        "Very High"
+      ]
     },
     "y": {
-      "field": "distress_level",
-      "type": "ordinal",
-      "sort": [
-        "Very High",
-        "High",
-        "Moderate",
-        "Low"
-      ],
-      "axis": {
-        "title": "Distress Level (K10)",
-        "labelFontSize": 11,
-        "titleFontSize": 12,
-        "grid": false,
-        "domain": false,
-        "ticks": false
-      }
-    }
-  },
-  "layer": [
-    {
-      "params": [
-        {
-          "name": "cell_hover",
-          "select": {
-            "type": "point",
-            "on": "pointerover",
-            "clear": "pointerout"
-          }
-        }
-      ],
-      "mark": {
-        "type": "rect"
+      "field": "percentage",
+      "type": "quantitative",
+      "scale": {
+        "domain": [0, 80]
       },
-      "encoding": {
-        "color": {
-          "field": "percentage",
-          "type": "quantitative",
-          "scale": {
-            "scheme": "tealblues"
-          },
-          "legend": {
-            "title": "Cohort Share (%)",
-            "orient": "bottom",
-            "direction": "horizontal"
-          }
-        },
-        "stroke": {
-          "condition": {
-            "param": "cell_hover",
-            "empty": false,
-            "value": "#0f172a"
-          },
-          "value": "#ffffff"
-        },
-        "strokeWidth": {
-          "condition": {
-            "param": "cell_hover",
-            "empty": false,
-            "value": 2.5
-          },
-          "value": 1.5
-        },
-        "tooltip": [
-          {
-            "field": "age_group",
-            "type": "nominal",
-            "title": "Age Cohort"
-          },
-          {
-            "field": "distress_level",
-            "type": "nominal",
-            "title": "K10 Distress Level"
-          },
-          {
-            "field": "percentage",
-            "type": "quantitative",
-            "title": "Cohort Share (%)",
-            "format": ".1f"
-          },
-          {
-            "field": "count_k",
-            "type": "quantitative",
-            "title": "Est. Population ('000)",
-            "format": ",.1f"
-          }
-        ]
+      "axis": {
+        "title": "Cohort Share (%)",
+        "format": ".0f",
+        "labelFontSize": 11,
+        "titleFontSize": 12
       }
     },
-    {
-      "mark": {
-        "type": "text",
-        "baseline": "middle",
-        "fontSize": 11,
-        "fontWeight": 600
+    "color": {
+      "field": "distress_level",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Low",
+          "Moderate",
+          "High",
+          "Very High"
+        ],
+        "range": [
+          "#94a3b8",
+          "#38bdf8",
+          "#f59e0b",
+          "#e11d48"
+        ]
       },
-      "encoding": {
-        "text": {
-          "field": "percentage",
-          "type": "quantitative",
-          "format": ".1f"
-        },
-        "color": {
-          "condition": {
-            "test": "datum.percentage > 40",
-            "value": "#ffffff"
-          },
-          "value": "#0f172a"
-        }
+      "legend": {
+        "title": "Distress Level (K10)",
+        "orient": "bottom",
+        "direction": "horizontal"
       }
-    }
-  ]
+    },
+    "opacity": {
+      "condition": {
+        "param": "distress_hover",
+        "value": 1
+      },
+      "value": 0.35
+    },
+    "tooltip": [
+      {
+        "field": "age_group",
+        "type": "nominal",
+        "title": "Age Cohort"
+      },
+      {
+        "field": "distress_level",
+        "type": "nominal",
+        "title": "K10 Distress Level"
+      },
+      {
+        "field": "percentage",
+        "type": "quantitative",
+        "title": "Cohort Share (%)",
+        "format": ".1f"
+      },
+      {
+        "field": "count_k",
+        "type": "quantitative",
+        "title": "Est. Population ('000)",
+        "format": ",.1f"
+      }
+    ]
+  }
 }
