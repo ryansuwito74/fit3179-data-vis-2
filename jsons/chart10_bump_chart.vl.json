@@ -54,7 +54,9 @@
         "y": {
           "field": "y_pos",
           "type": "ordinal",
-          "sort": "ascending"
+          "scale": {
+            "domain": [1, 2, 3, 4, 5, 6]
+          }
         },
         "text": {
           "field": "label"
@@ -63,7 +65,14 @@
     },
     {
       "data": {
-        "url": "data/chart10_bump_age_ranks.csv"
+        "url": "data/chart10_bump_age_ranks.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "rank": "number",
+            "service_rate_per_1k": "number"
+          }
+        }
       },
       "params": [
         {
@@ -96,7 +105,9 @@
         "y": {
           "field": "rank",
           "type": "ordinal",
-          "sort": "ascending",
+          "scale": {
+            "domain": [1, 2, 3, 4, 5, 6]
+          },
           "axis": {
             "title": "Demand Rank (1 = Highest Demand)",
             "labelFontSize": 11,
@@ -155,7 +166,14 @@
     },
     {
       "data": {
-        "url": "data/chart10_bump_age_ranks.csv"
+        "url": "data/chart10_bump_age_ranks.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "rank": "number",
+            "service_rate_per_1k": "number"
+          }
+        }
       },
       "mark": {
         "type": "point",
@@ -169,7 +187,9 @@
         "y": {
           "field": "rank",
           "type": "ordinal",
-          "sort": "ascending"
+          "scale": {
+            "domain": [1, 2, 3, 4, 5, 6]
+          }
         },
         "color": {
           "field": "age_group",
@@ -256,7 +276,9 @@
         "y": {
           "field": "rank",
           "type": "ordinal",
-          "sort": "ascending"
+          "scale": {
+            "domain": [1, 2, 3, 4, 5, 6]
+          }
         },
         "text": {
           "field": "label"
