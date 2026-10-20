@@ -192,24 +192,14 @@
         "type": "text",
         "align": "left",
         "dx": 10,
+        "dy": {
+          "expr": "datum.age_group === '45–54' ? -8 : (datum.age_group === '15–17' ? -6 : (datum.age_group === '55–64' ? 6 : (datum.age_group === '35–44' ? 8 : 0)))"
+        },
         "fontSize": 11,
         "fontWeight": 700,
         "fill": "#0f172a"
       },
       "encoding": {
-        "yOffset": {
-          "condition": [
-            {
-              "test": "datum.age_group === '15–17'",
-              "value": -8
-            },
-            {
-              "test": "datum.age_group === '55–64'",
-              "value": 8
-            }
-          ],
-          "value": 0
-        },
         "text": {
           "field": "label_text",
           "type": "nominal"
