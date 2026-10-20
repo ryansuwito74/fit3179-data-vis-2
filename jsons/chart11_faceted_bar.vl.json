@@ -18,7 +18,7 @@
     }
   },
   "spec": {
-    "width": 280,
+    "width": 250,
     "height": {
       "step": 21
     },
@@ -43,7 +43,8 @@
         "sort": "-x",
         "axis": {
           "title": null,
-          "labelFontSize": 11
+          "labelFontSize": 11,
+          "labelLimit": 190
         }
       },
       "x": {
@@ -72,7 +73,9 @@
         "legend": {
           "title": "Disorder Family",
           "orient": "bottom",
-          "direction": "horizontal"
+          "direction": "horizontal",
+          "columns": 3,
+          "labelExpr": "replace(datum.label, ' Disorders', '')"
         }
       },
       "opacity": {
