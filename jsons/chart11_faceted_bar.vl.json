@@ -13,9 +13,7 @@
       "type": "nominal",
       "header": {
         "title": null,
-        "labelFontWeight": "bold",
-        "labelFontSize": 12,
-        "labelPadding": 6
+        "labels": false
       }
     }
   },
@@ -71,7 +69,11 @@
             "#0284c7"
           ]
         },
-        "legend": null
+        "legend": {
+          "title": "Disorder Family",
+          "orient": "bottom",
+          "direction": "horizontal"
+        }
       },
       "opacity": {
         "condition": {
