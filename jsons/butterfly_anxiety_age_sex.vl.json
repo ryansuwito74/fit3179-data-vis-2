@@ -3,7 +3,7 @@
   "width": "container",
   "height": 360,
   "data": {
-    "url": "data/chart2_butterfly_age_sex.csv"
+    "url": "data/butterfly_anxiety_age_sex.csv"
   },
   "transform": [
     {

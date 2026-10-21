@@ -32,7 +32,7 @@
           "lookup": "properties.STATE_NAME",
           "from": {
             "data": {
-              "url": "data/chart1_state_prevalence.csv"
+              "url": "data/choropleth_state_prevalence.csv"
             },
             "key": "State",
             "fields": [

@@ -65,7 +65,7 @@
     },
     {
       "data": {
-        "url": "data/chart10_bump_age_ranks.csv",
+        "url": "data/bump_chart_age_demand_ranks.csv",
         "format": {
           "type": "csv",
           "parse": {
@@ -166,7 +166,7 @@
     },
     {
       "data": {
-        "url": "data/chart10_bump_age_ranks.csv",
+        "url": "data/bump_chart_age_demand_ranks.csv",
         "format": {
           "type": "csv",
           "parse": {

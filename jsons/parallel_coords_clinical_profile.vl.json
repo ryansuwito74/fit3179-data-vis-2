@@ -3,7 +3,7 @@
   "width": "container",
   "height": 360,
   "data": {
-    "url": "data/chart5_parallel_clinical_profile.csv"
+    "url": "data/parallel_coords_clinical_profile.csv"
   },
   "transform": [
     {

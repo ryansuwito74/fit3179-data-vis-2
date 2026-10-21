@@ -5,7 +5,7 @@
     "contains": "padding"
   },
   "data": {
-    "url": "data/chart11_treemap_diagnoses.csv"
+    "url": "data/faceted_bar_diagnoses_breakdown.csv"
   },
   "facet": {
     "row": {

@@ -3,7 +3,7 @@
   "width": "container",
   "height": 320,
   "data": {
-    "url": "data/chart12_bullet_state_benchmarks.csv"
+    "url": "data/bullet_state_benchmarks.csv"
   },
   "transform": [
     {

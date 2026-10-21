@@ -30,7 +30,7 @@
     },
     {
       "data": {
-        "url": "data/chart8_streamgraph_mbs_services.csv"
+        "url": "data/stacked_area_mbs_services.csv"
       },
       "params": [
         {

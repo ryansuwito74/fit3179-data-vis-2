@@ -3,7 +3,7 @@
   "width": "container",
   "height": 300,
   "data": {
-    "url": "data/chart7_dumbbell_provider_gap.csv"
+    "url": "data/dumbbell_medicare_gender_gap.csv"
   },
   "encoding": {
     "y": {

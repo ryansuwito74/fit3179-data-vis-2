@@ -25,7 +25,7 @@
     },
     {
       "data": {
-        "url": "data/chart9_sa4_binned_map.csv"
+        "url": "data/binned_map_sa4_prevalence.csv"
       },
       "transform": [
         {

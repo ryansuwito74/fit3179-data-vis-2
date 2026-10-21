@@ -3,7 +3,7 @@
   "width": "container",
   "height": 340,
   "data": {
-    "url": "data/chart3_slopegraph_shift.csv"
+    "url": "data/slopegraph_distress_drift.csv"
   },
   "encoding": {
     "x": {

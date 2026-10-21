@@ -25,7 +25,7 @@
     },
     {
       "data": {
-        "url": "data/chart6_phn_symbols.csv"
+        "url": "data/symbol_map_phn_volume.csv"
       },
       "params": [
         {

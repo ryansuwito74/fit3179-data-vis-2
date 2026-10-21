@@ -3,11 +3,15 @@ SA4_Code,SA4_Name,State,lat,lon,patients_count,prevalence_pct
 102,Central Coast,NSW,-33.32,151.34,37984,10.96
 103,Central West,NSW,-33.28,148.6,21859,10.26
 104,Coffs Harbour - Grafton,NSW,-30.1,153.05,16022,10.96
+105,Far West and Orana,NSW,-31.5,144.5,10542,9.12
 106,Hunter Valley exc Newcastle,NSW,-32.65,151.15,34767,11.91
 107,Illawarra,NSW,-34.48,150.85,31725,10.11
 108,Mid North Coast,NSW,-31.43,152.75,26154,11.42
+109,Murray,NSW,-35.7,145.5,12567,10.17
+110,New England and North West,NSW,-30.5,150.8,17507,9.43
 111,Newcastle and Lake Macquarie,NSW,-32.98,151.68,47681,12.21
 112,Richmond - Tweed,NSW,-28.75,153.35,25565,9.95
+113,Riverina,NSW,-34.8,146.5,15095,9.22
 114,Southern Highlands and Shoalhaven,NSW,-34.9,150.5,16796,10.43
 115,Sydney - Baulkham Hills and Hawkesbury,NSW,-33.62,150.92,14282,5.4
 116,Sydney - Blacktown,NSW,-33.75,150.86,23835,5.94
@@ -15,10 +19,14 @@ SA4_Code,SA4_Name,State,lat,lon,patients_count,prevalence_pct
 118,Sydney - Eastern Suburbs,NSW,-33.91,151.25,16001,6.12
 119,Sydney - Inner South West,NSW,-33.95,151.07,30363,5.02
 120,Sydney - Inner West,NSW,-33.88,151.12,20635,6.77
+121,Sydney - North Sydney and Hornsby,NSW,-33.74,151.15,19054,4.72
 122,Sydney - Northern Beaches,NSW,-33.72,151.28,16421,6.23
+123,Sydney - Outer South West,NSW,-34.05,150.7,21272,7.01
 124,Sydney - Outer West and Blue Mountains,NSW,-33.72,150.55,32225,9.7
-125,Sydney - Parramatta,NSW,-33.81,151,23507,4.76
+125,Sydney - Parramatta,NSW,-33.81,151.0,23507,4.76
+126,Sydney - Ryde,NSW,-33.8,151.12,8632,4.42
 127,Sydney - South West,NSW,-33.98,150.88,23971,5.05
+128,Sydney - Sutherland,NSW,-34.05,151.1,17300,7.66
 201,Ballarat,VIC,-37.56,143.85,21746,12.5
 202,Bendigo,VIC,-36.75,144.28,20292,12.1
 203,Geelong,VIC,-38.15,144.36,34722,10.59
@@ -33,19 +41,49 @@ SA4_Code,SA4_Name,State,lat,lon,patients_count,prevalence_pct
 212,Melbourne - South East,VIC,-38.02,145.25,59821,6.96
 213,Melbourne - West,VIC,-37.8,144.75,59330,6.96
 214,Mornington Peninsula,VIC,-38.28,145.12,32659,10.6
+215,North West,VIC,-35.5,142.5,15424,10.14
+216,Shepparton,VIC,-36.38,145.4,14251,10.38
+217,Warrnambool and South West,VIC,-38.15,142.5,12921,10.31
 301,Brisbane - East,QLD,-27.52,153.18,23939,9.98
 302,Brisbane - North,QLD,-27.38,153.04,22600,10.06
 303,Brisbane - South,QLD,-27.56,153.03,30360,8.18
 304,Brisbane - West,QLD,-27.48,152.94,17247,9.12
 305,Brisbane Inner City,QLD,-27.47,153.02,28665,9.81
+306,Cairns,QLD,-16.92,145.77,25049,9.58
+307,Darling Downs - Maranoa,QLD,-27.15,149.5,10871,8.51
+308,Central Queensland,QLD,-23.4,150.5,21404,9.25
 309,Gold Coast,QLD,-28.02,153.4,53788,8.39
+310,Ipswich,QLD,-27.62,152.76,38903,10.59
+311,Logan - Beaudesert,QLD,-27.75,153.05,33502,9.45
+312,Mackay - Isaac - Whitsunday,QLD,-21.15,149.18,13158,7.46
+313,Moreton Bay - North,QLD,-27.1,153.0,29972,11.53
+314,Moreton Bay - South,QLD,-27.3,152.95,19914,9.48
+315,Queensland - Outback,QLD,-23.5,143.0,3543,4.42
 316,Sunshine Coast,QLD,-26.65,153.06,36705,9.2
+317,Toowoomba,QLD,-27.56,151.95,18386,11.08
+318,Townsville,QLD,-19.26,146.82,21782,9.16
+319,Wide Bay,QLD,-25.3,152.4,32412,10.83
 401,Adelaide - Central and Hills,SA,-34.95,138.7,26509,8.49
 402,Adelaide - North,SA,-34.75,138.65,47525,10.43
 403,Adelaide - South,SA,-35.12,138.55,39028,10.41
+404,Adelaide - West,SA,-34.9,138.52,20738,8.55
+405,Barossa - Yorke - Mid North,SA,-34.0,138.5,12480,10.74
+406,South Australia - Outback,SA,-30.5,136.0,4025,4.89
+407,South Australia - South East,SA,-36.5,140.5,17865,10.3
+501,Bunbury,WA,-33.33,115.64,17142,9.17
+502,Mandurah,WA,-32.53,115.72,10931,9.75
 503,Perth - Inner,WA,-31.95,115.86,14756,8.1
 504,Perth - North East,WA,-31.85,115.98,24430,8.83
 505,Perth - North West,WA,-31.78,115.78,46109,7.99
 506,Perth - South East,WA,-32.05,115.95,41476,7.83
 507,Perth - South West,WA,-32.18,115.82,39642,8.94
-602,Hobart,TAS,-42.88,147.33,17041,11.27
+509,Western Australia - Wheat Belt,WA,-31.8,117.5,12239,8.79
+510,Western Australia - Outback (North),WA,-20.5,122.0,3815,3.98
+511,Western Australia - Outback (South),WA,-29.0,122.5,9340,7.99
+601,Hobart,TAS,-42.88,147.33,26757,11.59
+602,Launceston and North East,TAS,-41.44,147.14,17041,11.27
+603,South East,TAS,-42.8,147.6,4441,10.87
+604,West and North West,TAS,-41.5,145.5,12999,11.45
+701,Darwin,NT,-12.46,130.84,7733,5.65
+702,Northern Territory - Outback,NT,-20.0,133.5,4196,4.42
+801,Australian Capital Territory,ACT,-35.28,149.13,44662,10.01

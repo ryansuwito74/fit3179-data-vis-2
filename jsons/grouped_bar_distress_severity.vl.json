@@ -3,7 +3,7 @@
   "width": "container",
   "height": 340,
   "data": {
-    "url": "data/chart4_age_distress.csv"
+    "url": "data/grouped_bar_distress_severity.csv"
   },
   "params": [
     {
