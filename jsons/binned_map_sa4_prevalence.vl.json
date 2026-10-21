@@ -175,22 +175,22 @@
       "data": {
         "values": [
           {
-            "lon": 144.75,
-            "lat": -33.5,
-            "label": "Central Vic"
-          },
-          {
-            "lon": 144.75,
-            "lat": -34.3,
-            "label": "Binned Peak (>12%)"
+            "lon": 138.5,
+            "lat": -40.5
           }
         ]
       },
       "mark": {
         "type": "text",
-        "align": "center",
-        "fontSize": 10.5,
-        "fontWeight": 700,
+        "text": [
+          "Central Vic Binned",
+          "Peak (>12%)"
+        ],
+        "align": "right",
+        "baseline": "middle",
+        "fontSize": 11,
+        "fontWeight": 600,
+        "lineHeight": 13,
         "fill": "#3b0764"
       },
       "encoding": {
@@ -201,10 +201,6 @@
         "latitude": {
           "field": "lat",
           "type": "quantitative"
-        },
-        "text": {
-          "field": "label",
-          "type": "nominal"
         }
       }
     },
@@ -212,16 +208,16 @@
       "data": {
         "values": [
           {
-            "lon": 144.75,
-            "lat": -34.7,
-            "lon2": 144.75,
-            "lat2": -35.75
+            "lon": 139.2,
+            "lat": -40.2,
+            "lon2": 143.2,
+            "lat2": -37.5
           }
         ]
       },
       "mark": {
         "type": "rule",
-        "color": "#3b0764",
+        "color": "#4c1d95",
         "strokeWidth": 1.5
       },
       "encoding": {
@@ -245,17 +241,19 @@
       "data": {
         "values": [
           {
-            "lon": 144.75,
-            "lat": -35.85
+            "lon": 143.4,
+            "lat": -37.3,
+            "arrow": "↗"
           }
         ]
       },
       "mark": {
-        "type": "point",
-        "shape": "triangle-down",
-        "size": 45,
-        "color": "#3b0764",
-        "fill": "#3b0764"
+        "type": "text",
+        "fontSize": 14,
+        "fontWeight": 700,
+        "fill": "#4c1d95",
+        "baseline": "middle",
+        "align": "center"
       },
       "encoding": {
         "longitude": {
@@ -265,6 +263,10 @@
         "latitude": {
           "field": "lat",
           "type": "quantitative"
+        },
+        "text": {
+          "field": "arrow",
+          "type": "nominal"
         }
       }
     }
