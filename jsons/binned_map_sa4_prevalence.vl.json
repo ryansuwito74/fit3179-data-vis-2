@@ -175,17 +175,20 @@
       "data": {
         "values": [
           {
-            "lon": 144.25,
-            "lat": -37.25,
-            "label": "Central Vic Binned Peak (>12%)"
+            "lon": 144.75,
+            "lat": -33.5,
+            "label": "Central Vic"
+          },
+          {
+            "lon": 144.75,
+            "lat": -34.3,
+            "label": "Binned Peak (>12%)"
           }
         ]
       },
       "mark": {
         "type": "text",
-        "align": "right",
-        "dx": -16,
-        "dy": -10,
+        "align": "center",
         "fontSize": 10.5,
         "fontWeight": 700,
         "fill": "#3b0764"
@@ -202,6 +205,66 @@
         "text": {
           "field": "label",
           "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 144.75,
+            "lat": -34.7,
+            "lon2": 144.75,
+            "lat2": -35.75
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "color": "#3b0764",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "longitude2": {
+          "field": "lon2"
+        },
+        "latitude2": {
+          "field": "lat2"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 144.75,
+            "lat": -35.85
+          }
+        ]
+      },
+      "mark": {
+        "type": "point",
+        "shape": "triangle-down",
+        "size": 45,
+        "color": "#3b0764",
+        "fill": "#3b0764"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
         }
       }
     }
